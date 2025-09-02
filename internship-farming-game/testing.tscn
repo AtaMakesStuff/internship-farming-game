@@ -5,8 +5,8 @@
 
 [node name="testing" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_m16bd")]
-position = Vector2(224, 128)
-
 [node name="farm_tile" parent="." instance=ExtResource("2_5abx4")]
 position = Vector2(288, 160)
+
+[node name="Player" parent="." instance=ExtResource("1_m16bd")]
+position = Vector2(224, 128)

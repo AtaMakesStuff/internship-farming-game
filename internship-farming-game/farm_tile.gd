@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		var tex = $ColorRect.texture
+		var tex = $CollisionShape2D.shape
 		if tex == null:
 			return
 		
