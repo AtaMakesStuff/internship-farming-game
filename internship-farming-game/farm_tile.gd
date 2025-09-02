@@ -10,8 +10,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+var is_player_inside = false
+
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+	if body.name == "player":
+		is_player_inside = true
+
+func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
+	if body.name == "player":
+		is_player_inside = false
+
 func _input(event):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and is_player_inside:
 		var tex = $CollisionShape2D.shape
 		if tex == null:
 			return

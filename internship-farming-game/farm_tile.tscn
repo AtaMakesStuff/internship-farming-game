@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy3xf8kokulcv"]
+[gd_scene load_steps=6 format=3 uid="uid://dy3xf8kokulcv"]
 
 [ext_resource type="Script" path="res://farm_tile.gd" id="1_sbqfu"]
 [ext_resource type="Texture2D" uid="uid://bn14bkrr8tfmh" path="res://art/Untilled-Farming-Tile.png" id="3_1jldd"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uiasw"]
 size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eleaj"]
+size = Vector2(224, 224)
 
 [node name="farm_tile" type="Area2D"]
 position = Vector2(32, 32)
@@ -24,3 +27,11 @@ texture = ExtResource("4_if0id")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uiasw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_eleaj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
