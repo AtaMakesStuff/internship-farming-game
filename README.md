@@ -7,4 +7,3 @@ Version 0.0.1
     - Basic sprite that can move around (no jumping or gravity)
     - Farming tile that player can click when close to "till" it for future planting 
 
-s
