@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://casinnr6aw1dg"]
+[gd_scene load_steps=4 format=3 uid="uid://casinnr6aw1dg"]
 
 [ext_resource type="PackedScene" uid="uid://c5b0bdgeuwwea" path="res://player.tscn" id="1_m16bd"]
 [ext_resource type="PackedScene" uid="uid://dy3xf8kokulcv" path="res://farm_tile.tscn" id="2_5abx4"]
+[ext_resource type="PackedScene" uid="uid://cw1ce7papfu5u" path="res://inventory.tscn" id="3_ho2oo"]
 
 [node name="testing" type="Node2D"]
 
@@ -10,3 +11,16 @@ position = Vector2(288, 160)
 
 [node name="player" parent="." instance=ExtResource("1_m16bd")]
 position = Vector2(224, 128)
+
+[node name="inventory" parent="." instance=ExtResource("3_ho2oo")]
+inventory = []
+inventoryLimit = 2
+
+[node name="addItem" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 56.0
+offset_right = 608.0
+offset_bottom = 128.0
+text = "Add a random shape"
+
+[connection signal="pressed" from="addItem" to="inventory" method="_on_add_item_pressed"]

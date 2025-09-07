@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw1ce7papfu5u"]
+
+[ext_resource type="Script" path="res://inventory.gd" id="1_xmoqm"]
+
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xmoqm")
+visibleInventory = [null, null, null, null, null]
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.724848, 0.555186, 0.35474, 1)
+
+[node name="slot1" type="ColorRect" parent="background"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="slot2" type="ColorRect" parent="background"]
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 128.0
+
+[node name="slot3" type="ColorRect" parent="background"]
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 128.0
+
+[node name="slot4" type="ColorRect" parent="background"]
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 128.0
+
+[node name="slot5" type="ColorRect" parent="background"]
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 128.0
