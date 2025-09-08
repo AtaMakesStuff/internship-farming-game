@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cw1ce7papfu5u"]
 
-[ext_resource type="Script" path="res://inventory.gd" id="1_xmoqm"]
+[ext_resource type="Script" path="res://inventory/inventory.gd" id="1_xmoqm"]
 
 [node name="inventory" type="Control"]
 layout_mode = 3
@@ -27,24 +27,28 @@ offset_right = 128.0
 offset_bottom = 128.0
 
 [node name="slot2" type="ColorRect" parent="background"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 64.0
 offset_right = 256.0
 offset_bottom = 128.0
 
 [node name="slot3" type="ColorRect" parent="background"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 64.0
 offset_right = 384.0
 offset_bottom = 128.0
 
 [node name="slot4" type="ColorRect" parent="background"]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 64.0
 offset_right = 512.0
 offset_bottom = 128.0
 
 [node name="slot5" type="ColorRect" parent="background"]
+layout_mode = 0
 offset_left = 576.0
 offset_top = 64.0
 offset_right = 640.0
