@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://dnqry4d1pg0if"]
+
+[ext_resource type="Resource" uid="uid://v4x3akrnpomy" path="res://inventory/tools/hoe.tres" id="1_ptguh"]
+[ext_resource type="Script" path="res://inventory/inventory.gd" id="2_b8bmf"]
+
+[resource]
+script = ExtResource("2_b8bmf")
+items = [null, null, ExtResource("1_ptguh"), null, null, null, null, null, null, ExtResource("1_ptguh"), null, null, null, null, null]
