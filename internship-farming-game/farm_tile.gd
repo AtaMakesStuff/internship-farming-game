@@ -1,25 +1,21 @@
 extends Area2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@export var item: inventoryItem
+var player = SceneMultiplayer
 
 var is_player_inside = false
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = true
+		player = body
 
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = false
 
+# when player clicks on farm tile and is nearby
+# turn farm tile into tilled texture 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and is_player_inside:
 		var tex = $CollisionShape2D.shape
@@ -34,3 +30,17 @@ func _input(event):
 		if sprite_rect.has_point(mouse_pos):
 			$ColorRect.hide()
 			$ColorRect2.show()
+
+#experimenting with making farm tile harvestable
+"""
+func make_harvestable():
+	var harvest_instance = hoe.instantiate()
+	harvest_instance.rotation = rotation
+	harvest_instance.global_position = $farm_tile.global_position
+	get_parent().add_child(harvest_instance)
+	player.collect(item)
+	
+
+func _on_make_harvestable_pressed() -> void:
+	make_harvestable()
+"""
