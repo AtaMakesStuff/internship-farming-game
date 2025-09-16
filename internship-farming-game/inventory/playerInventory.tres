@@ -5,63 +5,63 @@
 
 [sub_resource type="Resource" id="Resource_1kx3a"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_snrgr"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_pj5ms"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_k0xg5"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_hqpc1"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_qkexw"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_su3l4"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_p45c3"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_2yyfs"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_n1gl2"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_fg5rt"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_takni"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_sxts7"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_4yhmr"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [sub_resource type="Resource" id="Resource_4utmf"]
 script = ExtResource("2_vqinm")
-amount = 0
+amount = null
 
 [resource]
 script = ExtResource("2_b8bmf")

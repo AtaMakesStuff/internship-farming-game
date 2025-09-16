@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var item: inventoryItem
+@export var item: InventoryItem
 var player = SceneMultiplayer
 
 var is_player_inside = false

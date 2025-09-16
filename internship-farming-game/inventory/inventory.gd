@@ -6,7 +6,7 @@ signal update
 
 @export var slots: Array[InventorySlot]
 
-func insert(item: inventoryItem):
+func insert(item: InventoryItem):
 	# if item in slot is same as item being picked up, 
 	# add item to slot and stack
 	var item_slots = slots.filter(func(slot): return slot.item == item)

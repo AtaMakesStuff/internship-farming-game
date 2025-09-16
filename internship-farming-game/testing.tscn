@@ -17,10 +17,10 @@ position = Vector2(224, 128)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="inventory_ui" parent="CanvasLayer" instance=ExtResource("3_as27f")]
-offset_left = 448.0
-offset_top = 192.0
-offset_right = 1152.0
-offset_bottom = 640.0
+offset_left = 192.0
+offset_top = 72.0
+offset_right = 896.0
+offset_bottom = 520.0
 
 [node name="hoe" parent="." instance=ExtResource("4_bddse")]
 position = Vector2(72, 104)

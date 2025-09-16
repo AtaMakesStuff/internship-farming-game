@@ -2,8 +2,9 @@ extends Resource
 
 class_name InventorySlot
 
-@export var item: inventoryItem
+@export var item: InventoryItem
 @export var amount: int
+@export var is_active: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

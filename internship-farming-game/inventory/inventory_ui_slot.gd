@@ -2,8 +2,13 @@ extends Panel
 
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/ItemDisplay
 @onready var amount_text: Label = $CenterContainer/Panel/Label
+@onready var outline_visual: Sprite2D = $OutlineSprite2D
 
 func update(slot: InventorySlot):
+	if slot.is_active:
+		outline_visual.visible = true
+	else:
+		outline_visual.visible = false
 	if !slot.item:
 		item_visual.visible = false
 		amount_text.visible = false 

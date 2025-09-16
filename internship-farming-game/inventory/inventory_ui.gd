@@ -5,6 +5,9 @@ extends Control
 
 var is_open = false
 
+var base_vector = 0
+var active_queue = 0
+
 func _ready ():
 	inventory.update.connect(update_slots)
 	update_slots()
@@ -28,3 +31,15 @@ func open():
 func close():
 	visible = false
 	is_open = false
+
+# trying to handle scrolling equating moving the active slot
+# maybe do incrementation based on delta?
+"""
+func _input(event):
+	if event is InputEventPanGesture:
+		if active_queue >0:
+			if event.delta.x > 0:
+				active_queue =+ 1
+			else:
+				active_queue =+ 1
+"""
