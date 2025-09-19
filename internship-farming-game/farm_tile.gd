@@ -17,7 +17,7 @@ func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 # when player clicks on farm tile and is nearby
 # turn farm tile into tilled texture 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and is_player_inside and $"../CanvasLayer2/inventory_hotbar_ui".slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].name == "hoe":
+	if event is InputEventMouseButton and event.pressed and is_player_inside and is_item_active():
 		var tex = $CollisionShape2D.shape
 		if tex == null:
 			return
@@ -30,6 +30,19 @@ func _input(event):
 		if sprite_rect.has_point(mouse_pos):
 			$ColorRect.hide()
 			$ColorRect2.show()
+
+# checks if array is empty
+# as well as if item is empty
+# NOTE: change final line if hoe is no longer the Item name
+func is_item_active():
+	if !$"../CanvasLayer2/inventory_hotbar_ui".inventory.slots.is_empty():
+		if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item:
+			if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item.name == "hoe":
+				return true
+	else:
+		return false
+	
+	
 
 #experimenting with making farm tile harvestable
 """
