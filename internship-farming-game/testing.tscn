@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://casinnr6aw1dg"]
+[gd_scene load_steps=8 format=3 uid="uid://casinnr6aw1dg"]
 
 [ext_resource type="PackedScene" uid="uid://c5b0bdgeuwwea" path="res://player.tscn" id="1_m16bd"]
+[ext_resource type="Script" path="res://main_scene_start.gd" id="1_r4d37"]
 [ext_resource type="PackedScene" uid="uid://dy3xf8kokulcv" path="res://farm_tile.tscn" id="2_5abx4"]
 [ext_resource type="PackedScene" uid="uid://cw1ce7papfu5u" path="res://inventory/inventory.tscn" id="3_as27f"]
 [ext_resource type="PackedScene" uid="uid://dif6xewjgft72" path="res://hoe.tscn" id="4_bddse"]
 [ext_resource type="PackedScene" uid="uid://bg323oxrw7006" path="res://sword.tscn" id="5_aqoei"]
+[ext_resource type="PackedScene" uid="uid://cdyy60hxi7k4a" path="res://inventory_hotbar_ui.tscn" id="7_n8qdd"]
 
 [node name="testing" type="Node2D"]
+script = ExtResource("1_r4d37")
 
 [node name="farm_tile" parent="." instance=ExtResource("2_5abx4")]
 position = Vector2(288, 160)
@@ -39,3 +42,11 @@ position = Vector2(80, 32)
 
 [node name="sword3" parent="." instance=ExtResource("5_aqoei")]
 position = Vector2(168, 56)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="inventory_hotbar_ui" parent="CanvasLayer2" instance=ExtResource("7_n8qdd")]
+offset_left = 176.0
+offset_top = 440.0
+offset_right = 880.0
+offset_bottom = 888.0

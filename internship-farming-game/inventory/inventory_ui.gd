@@ -1,17 +1,14 @@
 extends Control
 
+signal new_active_queue_amount(int)
 @onready var inventory: Inventory = preload("res://inventory/playerInventory.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 
-var is_open = false
-
-var base_vector = 0
-var active_queue = 0
+@export var is_open = false
 
 func _ready ():
 	inventory.update.connect(update_slots)
 	update_slots()
-	close()
 
 func update_slots():
 	for i in range(min(inventory.slots.size(), slots.size())):
@@ -24,6 +21,7 @@ func _process(delta):
 		else:
 			open()
 
+
 func open():
 	visible = true
 	is_open = true 
@@ -31,6 +29,11 @@ func open():
 func close():
 	visible = false
 	is_open = false
+
+func initialize_active_inventory():
+	inventory.slots[0].is_active = true
+	update_slots()
+
 
 # trying to handle scrolling equating moving the active slot
 # maybe do incrementation based on delta?

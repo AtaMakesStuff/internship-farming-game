@@ -17,7 +17,7 @@ func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 # when player clicks on farm tile and is nearby
 # turn farm tile into tilled texture 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and is_player_inside:
+	if event is InputEventMouseButton and event.pressed and is_player_inside and $"../CanvasLayer2/inventory_hotbar_ui".slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].name == "hoe":
 		var tex = $CollisionShape2D.shape
 		if tex == null:
 			return
