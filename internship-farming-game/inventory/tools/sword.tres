@@ -7,3 +7,4 @@
 script = ExtResource("1_cc2ta")
 name = "sword"
 texture = ExtResource("2_bdf1a")
+is_active_item = false
