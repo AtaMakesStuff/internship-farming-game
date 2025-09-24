@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cw1ce7papfu5u" path="res://inventory/inventory.tscn" id="3_as27f"]
 [ext_resource type="PackedScene" uid="uid://dif6xewjgft72" path="res://hoe.tscn" id="4_bddse"]
 [ext_resource type="PackedScene" uid="uid://bg323oxrw7006" path="res://sword.tscn" id="5_aqoei"]
-[ext_resource type="PackedScene" uid="uid://cdyy60hxi7k4a" path="res://inventory_hotbar_ui.tscn" id="7_n8qdd"]
+[ext_resource type="PackedScene" uid="uid://cdyy60hxi7k4a" path="res://inventory/inventory_hotbar_ui.tscn" id="7_n8qdd"]
 
 [node name="testing" type="Node2D"]
 script = ExtResource("1_r4d37")

@@ -17,6 +17,8 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# add a canClick boolean in the loop to prevent loop breaking 
+# each time you click while a line is running 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("leftClick") :
 		if lines_counter < lines.size():

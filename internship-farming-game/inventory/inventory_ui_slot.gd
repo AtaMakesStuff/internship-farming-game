@@ -18,3 +18,9 @@ func update(slot: InventorySlot):
 		if slot.amount > 1:
 			amount_text.visible = true
 		amount_text.text = str(slot.amount)
+
+func deactivate(slot: InventorySlot):
+	outline_visual.visible = false
+
+#func decrease(slot: InventorySlot):
+#	slot.amount -= 1

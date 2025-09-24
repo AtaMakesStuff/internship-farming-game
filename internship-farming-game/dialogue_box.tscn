@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c11g25xw2akm5"]
 
-[ext_resource type="Script" path="res://dialogue.gd" id="1_i4asv"]
+[ext_resource type="Script" path="res://dialogue_reader.gd" id="1_i4asv"]
 
 [node name="dialogue_box" type="Control"]
 layout_mode = 3
@@ -28,4 +28,4 @@ layout_mode = 0
 offset_right = 192.0
 offset_bottom = 192.0
 script = ExtResource("1_i4asv")
-lines = ["First line", "second line", "third line", "fourth line", "fifth line"]
+lines = ["First line", "second line", "third line", "fourth line", "fifth line", "six line"]
