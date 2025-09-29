@@ -6,6 +6,7 @@ signal new_active_queue_amount(int)
 @export var is_open = false
 # I1
 # below variable breaks in any scene that isn't testing 
+# try out acess as unique name 
 #@onready var ui_node = $"../../CanvasLayer/inventory_ui"
 
 
@@ -23,6 +24,7 @@ func _process(delta):
 			close()
 		else:
 			open()
+		#if GameState.current_game_state == GameState.Game_State.
 		# I1
 		# working on hiding active slots when main inventory is open
 		# currently works but is based on pathway to inventory in testing scene
@@ -46,6 +48,8 @@ func open():
 func close():
 	visible = false
 	is_open = false
+	# I3
+	#GameState.current_game_state = GameState.Game_State.MENU
 
 
 func initialize_active_inventory():

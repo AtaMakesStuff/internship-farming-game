@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8b04v")
+lines_to_read = ["first test line", "second test line", "third test line"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -31,3 +32,5 @@ offset_right = 192.0
 offset_bottom = 192.0
 script = ExtResource("1_i4asv")
 lines = ["first line", "second line", "third line"]
+
+[connection signal="lines_to_send" from="." to="text_box" method="_on_dialogue_box_lines_to_send"]

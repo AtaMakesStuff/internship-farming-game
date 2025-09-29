@@ -9,18 +9,14 @@ var displayed_text = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var holder = ""
-	for n in range(0,lines[lines_counter].length(),+1):
-		holder += (lines[lines_counter][n])
-		text = holder
-		await get_tree().create_timer(0.05).timeout
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # add a canClick boolean in the loop to prevent loop breaking 
 # each time you click while a line is running 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("leftClick") :
+	if Input.is_action_just_pressed("leftClick") and GameState.current_game_state == GameState.Game_State.TALKING :
 		if lines_counter < lines.size():
 			lines_counter += 1
 		var holder = ""
@@ -49,5 +45,11 @@ func _process(delta: float) -> void:
 """
 
 # D1
-#func _on_dialogue_box_lines_to_send(data: Array) -> void:
-	#lines = data
+func _on_dialogue_box_lines_to_send(data: Array) -> void:
+	lines = data
+	var holder = ""
+	for n in range(0,lines[lines_counter].length(),+1):
+		holder += (lines[lines_counter][n])
+		text = holder
+		await get_tree().create_timer(0.05).timeout
+	GameState.current_game_state = GameState.Game_State.TALKING

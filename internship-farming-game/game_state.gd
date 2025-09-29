@@ -1,19 +1,16 @@
-extends Control
+extends Node
 
-# D1
-signal lines_to_send(data: Array)
-@export var lines_to_read = []
+enum Game_State {PLAYING, TALKING, MENU}
+var current_game_state = Game_State.PLAYING
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-# D1
-func _on_sprite_2d_npc_clicked() -> void:
-	visible = true
-	lines_to_send.emit(lines_to_read)
-	
+func enter_menu():
+	current_game_state = Game_State.MENU
