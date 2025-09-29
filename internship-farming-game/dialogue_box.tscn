@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c11g25xw2akm5"]
+[gd_scene load_steps=3 format=3 uid="uid://c11g25xw2akm5"]
 
-[ext_resource type="Script" path="res://dialogue_reader.gd" id="1_i4asv"]
+[ext_resource type="Script" path="res://dialogue.gd" id="1_8b04v"]
+[ext_resource type="Script" path="res://dialogue_text_box.gd" id="1_i4asv"]
 
 [node name="dialogue_box" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8b04v")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -28,4 +30,4 @@ layout_mode = 0
 offset_right = 192.0
 offset_bottom = 192.0
 script = ExtResource("1_i4asv")
-lines = ["First line", "second line", "third line", "fourth line", "fifth line", "six line"]
+lines = ["first line", "second line", "third line"]

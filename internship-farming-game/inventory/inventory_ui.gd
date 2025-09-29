@@ -4,7 +4,9 @@ signal new_active_queue_amount(int)
 @onready var inventory: Inventory = preload("res://inventory/playerInventory.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 @export var is_open = false
-@onready var ui_node = $"../../CanvasLayer/inventory_ui"
+# I1
+# below variable breaks in any scene that isn't testing 
+#@onready var ui_node = $"../../CanvasLayer/inventory_ui"
 
 
 func _ready ():
@@ -21,12 +23,21 @@ func _process(delta):
 			close()
 		else:
 			open()
-		if ui_node.is_open:
-			hide_active()
-		else:
-			show_active()
+		# I1
+		# working on hiding active slots when main inventory is open
+		# currently works but is based on pathway to inventory in testing scene
+		# so it breaks in any other scene
+		#if ui_node.is_open:
+			#hide_active()
+		#else:
+			#show_active()
+# I2
+# working on decreasing amount
+#	if Input.is_action_just_pressed("drop_item"):
+#		if !ui_node.is_open:
+#			decrease_slot()
+#			update_slots()
 
-# NOTE work in hiding active slot
 func open():
 	visible = true
 	is_open = true 
@@ -36,17 +47,27 @@ func close():
 	visible = false
 	is_open = false
 
+
 func initialize_active_inventory():
 	inventory.slots[0].is_active = true
 	update_slots()
 
-func hide_active():
-	for i in range(min(inventory.slots.size(), slots.size())):
-		slots[i].deactivate(inventory.slots[i])
+# I1
+# working on hiding active slots when main inventory screen is open
+#func hide_active():
+	#for i in range(min(inventory.slots.size(), slots.size())):
+		#slots[i].deactivate(inventory.slots[i])
 
-func show_active():
-	for i in range(min(inventory.slots.size(), slots.size())):
-		update_slots()
+# I1
+#func show_active():
+	#for i in range(min(inventory.slots.size(), slots.size())):
+		#update_slots()
+
+# I2
+# work on decreasing amount
+#func decrease_slot():
+#	for i in range(min(inventory.slots.size(), slots.size())):
+#		slots[i].decrease(inventory.slots[i])
 
 # trying to handle scrolling equating moving the active slot
 # maybe do incrementation based on delta?

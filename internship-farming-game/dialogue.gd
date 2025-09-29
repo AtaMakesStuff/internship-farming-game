@@ -1,17 +1,19 @@
-extends Resource
+extends Control
 
-class_name InventorySlot
-
-@export var item: InventoryItem
-@export var amount: int
-@export var is_active: bool = false
-#@export var is_clicked: bool = false
+# D1
+#signal lines_to_send(data: Array)
+#@export var lines_to_read = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+# D1
+func _on_sprite_2d_npc_clicked() -> void:
+	visible = true
+	#lines_to_send.emit(lines_to_read)
+	

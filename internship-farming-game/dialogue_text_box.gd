@@ -47,3 +47,7 @@ func _process(delta: float) -> void:
 			text = holder
 			await get_tree().create_timer(0.05).timeout
 """
+
+# D1
+#func _on_dialogue_box_lines_to_send(data: Array) -> void:
+	#lines = data

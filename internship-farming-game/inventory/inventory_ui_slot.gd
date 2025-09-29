@@ -22,5 +22,8 @@ func update(slot: InventorySlot):
 func deactivate(slot: InventorySlot):
 	outline_visual.visible = false
 
+# I2
+# work on decreasing amount
 #func decrease(slot: InventorySlot):
-#	slot.amount -= 1
+#	if slot.is_active:
+#		slot.amount -= 1

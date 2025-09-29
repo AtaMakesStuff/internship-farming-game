@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://casinnr6aw1dg"]
+[gd_scene load_steps=10 format=3 uid="uid://casinnr6aw1dg"]
 
 [ext_resource type="PackedScene" uid="uid://c5b0bdgeuwwea" path="res://player.tscn" id="1_m16bd"]
 [ext_resource type="Script" path="res://main_scene_start.gd" id="1_r4d37"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dif6xewjgft72" path="res://hoe.tscn" id="4_bddse"]
 [ext_resource type="PackedScene" uid="uid://bg323oxrw7006" path="res://sword.tscn" id="5_aqoei"]
 [ext_resource type="PackedScene" uid="uid://cdyy60hxi7k4a" path="res://inventory/inventory_hotbar_ui.tscn" id="7_n8qdd"]
+[ext_resource type="PackedScene" uid="uid://cwd443r74rul7" path="res://npc.tscn" id="8_ka1op"]
+[ext_resource type="PackedScene" uid="uid://c11g25xw2akm5" path="res://dialogue_box.tscn" id="9_0hxd5"]
 
 [node name="testing" type="Node2D"]
 script = ExtResource("1_r4d37")
@@ -50,3 +52,18 @@ offset_left = 176.0
 offset_top = 440.0
 offset_right = 880.0
 offset_bottom = 888.0
+
+[node name="npc" parent="." instance=ExtResource("8_ka1op")]
+position = Vector2(1048, 80)
+
+[node name="dialogue_box" parent="." instance=ExtResource("9_0hxd5")]
+visible = false
+offset_left = 333.0
+offset_top = 408.0
+offset_right = 333.0
+offset_bottom = 408.0
+
+[connection signal="npc_clicked" from="npc/Sprite2D" to="dialogue_box" method="_on_sprite_2d_npc_clicked"]
+
+[editable path="npc"]
+[editable path="dialogue_box"]
