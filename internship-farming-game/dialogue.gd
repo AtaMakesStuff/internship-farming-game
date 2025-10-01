@@ -15,5 +15,11 @@ func _process(delta: float) -> void:
 # D1
 func _on_sprite_2d_npc_clicked() -> void:
 	visible = true
+	#GameState.enter_talking()
 	lines_to_send.emit(lines_to_read)
 	
+
+
+func _on_text_box_dialogue_finished() -> void:
+	visible = false 
+	GameState.enter_playing()

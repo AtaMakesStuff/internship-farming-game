@@ -2,7 +2,7 @@ extends GridContainer
 
 # I1
 # wokring on hiding active slot when main inventory is open
-#@onready var inventory_ui = $"../../../../CanvasLayer/inventory_ui"
+#@onready var ui_node = %inventory_ui
 var active_queue = 0
 var min_active_inventory = 0
 var max_active_inventory = 4
@@ -15,7 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# I1
-	#if !inventory_ui.is_open:
+	#if !ui_node.is_open:
 	if Input.is_action_just_pressed("inventoryRight"):
 		if active_queue < max_active_inventory:
 			active_queue += 1
@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("inventoryLeft"):
 		# I1
-		#if !inventory_ui.is_open:
+		#if !ui_node.is_open:
 		if active_queue	> min_active_inventory:
 			active_queue -= 1
 			get_parent().get_parent().inventory.slots[active_queue + 1].is_active = false

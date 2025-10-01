@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 				text = holder
 				await get_tree().create_timer(0.05).timeout
 		else:
+			lines_counter = 0
 			dialogue_finished.emit()
 
 # working version
@@ -52,4 +53,4 @@ func _on_dialogue_box_lines_to_send(data: Array) -> void:
 		holder += (lines[lines_counter][n])
 		text = holder
 		await get_tree().create_timer(0.05).timeout
-	GameState.current_game_state = GameState.Game_State.TALKING
+	GameState.enter_talking()
