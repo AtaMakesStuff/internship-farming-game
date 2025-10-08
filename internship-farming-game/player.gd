@@ -42,5 +42,5 @@ func _physics_process(delta: float) -> void:
 func collect(item):
 	inventory.insert(item)
 
-func remove(item):
-	pass 
+func _on_inventory_ui_to_remove_slot_number(data: int) -> void:
+	inventory.remove(data)

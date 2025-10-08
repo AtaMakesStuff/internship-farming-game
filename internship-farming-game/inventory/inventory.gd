@@ -20,5 +20,5 @@ func insert(item: InventoryItem):
 			empty_slots[0].amount = 1
 	update.emit()
 
-func remove(slot: InventorySlot):
-	pass
+func remove(data: int):
+	slots[data].item = null

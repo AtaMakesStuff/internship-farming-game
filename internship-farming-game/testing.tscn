@@ -64,6 +64,7 @@ offset_top = 408.0
 offset_right = 333.0
 offset_bottom = 408.0
 
+[connection signal="to_remove_slot_number" from="CanvasLayer/inventory_ui" to="player" method="_on_inventory_ui_to_remove_slot_number"]
 [connection signal="send_active_queue" from="CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer" to="CanvasLayer2/inventory_hotbar_ui" method="_on_grid_container_send_active_queue"]
 [connection signal="npc_clicked" from="npc/Sprite2D" to="dialogue_box" method="_on_sprite_2d_npc_clicked"]
 [connection signal="dialogue_finished" from="dialogue_box/text_box" to="dialogue_box" method="_on_text_box_dialogue_finished"]

@@ -9,6 +9,7 @@ var active_queue_holder
 # below variable breaks in any scene that isn't testing 
 @onready var ui_node = $"../../CanvasLayer/inventory_ui"
 var slot_number_to_be_removed: int 
+signal to_remove_slot_number(data: int)
 
 # I2
 @export var is_main_inventory = false 
@@ -30,8 +31,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("inventory"):
 		if is_open:
 			close()
+			update_slots()
 		else:
 			open()
+			update_slots()
 		# I1
 		# working on hiding active slots when main inventory is open
 		# currently works but is based on pathway to inventory in testing scene
@@ -48,7 +51,7 @@ func _process(delta):
 		if !is_main_inventory and GameState.check_playing():
 			decrease_slot()
 		update_slots()
-			#remove_item()
+		remove_item()
 
 func open():
 	visible = true
@@ -84,11 +87,13 @@ func decrease_slot():
 		slots[i].decrease(inventory.slots[i])
 
 # I2
-#func remove_item():
-	#for i in range(min(inventory.slots.size(), slots.size())):
-		#if slots[i].to_be_removed == true:
-		#	slot_number_to_be_removed = i
-		
+func remove_item():
+	for i in range(min(inventory.slots.size(), slots.size())):
+		if inventory.slots[i].to_be_removed == true:
+			slot_number_to_be_removed = i
+			to_remove_slot_number.emit(slot_number_to_be_removed)
+			inventory.slots[i].to_be_removed = false
+
 
 # trying to handle scrolling equating moving the active slot
 # maybe do incrementation based on delta?
