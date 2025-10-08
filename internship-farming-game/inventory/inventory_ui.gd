@@ -8,7 +8,10 @@ var active_queue_holder
 # I1
 # below variable breaks in any scene that isn't testing 
 @onready var ui_node = $"../../CanvasLayer/inventory_ui"
+var slot_number_to_be_removed: int 
 
+# I2
+@export var is_main_inventory = false 
 
 
 func _ready ():
@@ -39,18 +42,13 @@ func _process(delta):
 		else:
 			show_active()
 			GameState.enter_playing()
-		
-	#I2
-	if Input.is_action_just_pressed("drop_item"):
-		#inventory.remove(inventory.slots[active_queue_holder])
-		#update_slots()
-		print("removed!")
 # I2
 # working on decreasing amount
-#	if Input.is_action_just_pressed("drop_item"):
-#		if !ui_node.is_open:
-#			decrease_slot()
-#			update_slots()
+	if Input.is_action_just_pressed("drop_item"):
+		if !is_main_inventory and GameState.check_playing():
+			decrease_slot()
+		update_slots()
+			#remove_item()
 
 func open():
 	visible = true
@@ -81,9 +79,16 @@ func show_active():
 
 # I2
 # work on decreasing amount
-#func decrease_slot():
-#	for i in range(min(inventory.slots.size(), slots.size())):
-#		slots[i].decrease(inventory.slots[i])
+func decrease_slot():
+	for i in range(min(inventory.slots.size(), slots.size())):
+		slots[i].decrease(inventory.slots[i])
+
+# I2
+#func remove_item():
+	#for i in range(min(inventory.slots.size(), slots.size())):
+		#if slots[i].to_be_removed == true:
+		#	slot_number_to_be_removed = i
+		
 
 # trying to handle scrolling equating moving the active slot
 # maybe do incrementation based on delta?

@@ -5,7 +5,7 @@ extends Panel
 @onready var outline_visual: Sprite2D = $OutlineSprite2D
 
 func update(slot: InventorySlot):
-	if slot.is_active:
+	if slot.is_active and GameState.check_playing():
 		outline_visual.visible = true
 	else:
 		outline_visual.visible = false
@@ -18,12 +18,15 @@ func update(slot: InventorySlot):
 		if slot.amount > 1:
 			amount_text.visible = true
 		amount_text.text = str(slot.amount)
+	if slot.amount <1:
+		slot.to_be_removed = true
+		
 
 func deactivate(slot: InventorySlot):
 	outline_visual.visible = false
 
 # I2
 # work on decreasing amount
-#func decrease(slot: InventorySlot):
-#	if slot.is_active:
-#		slot.amount -= 1
+func decrease(slot: InventorySlot):
+	if slot.is_active:
+		slot.amount -= 1

@@ -21,4 +21,4 @@ func insert(item: InventoryItem):
 	update.emit()
 
 func remove(slot: InventorySlot):
-	slots[slot].amount -= 1
+	pass
