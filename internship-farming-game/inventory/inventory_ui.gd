@@ -1,16 +1,21 @@
 extends Control
 
 signal new_active_queue_amount(int)
+var active_queue_holder
 @onready var inventory: Inventory = preload("res://inventory/playerInventory.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 @export var is_open = false
 # I1
 # below variable breaks in any scene that isn't testing 
-# try out acess as unique name 
-#@onready var ui_node = %inventory_ui
+@onready var ui_node = $"../../CanvasLayer/inventory_ui"
+
 
 
 func _ready ():
+	# I1
+	# tried using gropus to get inventory_ui specifically 
+	#await get_tree().create_timer(0.05).timeout
+	#ui_node = get_tree().get_first_node_in_group("InventoryUI")
 	inventory.update.connect(update_slots)
 	update_slots()
 
@@ -28,10 +33,18 @@ func _process(delta):
 		# working on hiding active slots when main inventory is open
 		# currently works but is based on pathway to inventory in testing scene
 		# so it breaks in any other scene
-		#if ui_node.is_open:
-			#hide_active()
-		#else:
-			#show_active()
+		if ui_node.is_open:
+			hide_active()
+			GameState.enter_menu()
+		else:
+			show_active()
+			GameState.enter_playing()
+		
+	#I2
+	if Input.is_action_just_pressed("drop_item"):
+		#inventory.remove(inventory.slots[active_queue_holder])
+		#update_slots()
+		print("removed!")
 # I2
 # working on decreasing amount
 #	if Input.is_action_just_pressed("drop_item"):
@@ -57,14 +70,14 @@ func initialize_active_inventory():
 
 # I1
 # working on hiding active slots when main inventory screen is open
-#func hide_active():
-	#for i in range(min(inventory.slots.size(), slots.size())):
-		#slots[i].deactivate(inventory.slots[i])
+func hide_active():
+	for i in range(min(inventory.slots.size(), slots.size())):
+		slots[i].deactivate(inventory.slots[i])
 
 # I1
-#func show_active():
-	#for i in range(min(inventory.slots.size(), slots.size())):
-		#update_slots()
+func show_active():
+	for i in range(min(inventory.slots.size(), slots.size())):
+		update_slots()
 
 # I2
 # work on decreasing amount
@@ -83,3 +96,7 @@ func _input(event):
 			else:
 				active_queue =+ 1
 """
+
+
+func _on_grid_container_send_active_queue(data: int) -> void:
+	active_queue_holder = slots[data]

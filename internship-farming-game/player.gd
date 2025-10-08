@@ -37,3 +37,6 @@ func _physics_process(delta: float) -> void:
 
 func collect(item):
 	inventory.insert(item)
+
+func remove(item):
+	pass 

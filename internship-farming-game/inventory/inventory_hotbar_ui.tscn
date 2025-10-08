@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://inventory/inventory_active_slot.gd" id="3_227wa"]
 [ext_resource type="PackedScene" uid="uid://i47rllau7msp" path="res://inventory/inventory_ui_slot.tscn" id="4_tnt18"]
 
-[node name="inventory_hotbar_ui" type="Control"]
+[node name="inventory_hotbar_ui" type="Control" groups=["InventoryUI"]]
 custom_minimum_size = Vector2(704, 448)
 layout_mode = 3
 anchors_preset = 0

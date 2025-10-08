@@ -23,6 +23,10 @@ GameState="*res://game_state.gd"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+InventoryUI=""
+
 [input]
 
 left={

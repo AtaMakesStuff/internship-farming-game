@@ -5,6 +5,7 @@ signal dialogue_finished
 @export var lines = []
 var lines_counter = 0
 var displayed_text = ""
+var can_click = false 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +17,7 @@ func _ready() -> void:
 # add a canClick boolean in the loop to prevent loop breaking 
 # each time you click while a line is running 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("leftClick") and GameState.current_game_state == GameState.Game_State.TALKING :
+	if Input.is_action_just_pressed("leftClick") and GameState.check_talking():
 		if lines_counter < lines.size():
 			lines_counter += 1
 		var holder = ""
