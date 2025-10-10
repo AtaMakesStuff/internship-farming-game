@@ -17,9 +17,9 @@ func update(slot: InventorySlot):
 		item_visual.texture = slot.item.texture
 		if slot.amount > 1:
 			amount_text.visible = true
+		else: 
+			amount_text.visible = false
 		amount_text.text = str(slot.amount)
-	if slot.amount <= 1 and slot.item and slot.is_active:
-		slot.to_be_removed = true
 
 func deactivate(slot: InventorySlot):
 	outline_visual.visible = false
@@ -29,3 +29,5 @@ func deactivate(slot: InventorySlot):
 func decrease(slot: InventorySlot):
 	if slot.is_active:
 		slot.amount -= 1
+	if slot.amount < 1 and slot.item and slot.is_active:
+		slot.to_be_removed = true

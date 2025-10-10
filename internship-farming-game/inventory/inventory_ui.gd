@@ -50,8 +50,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("drop_item"):
 		if !is_main_inventory and GameState.check_playing():
 			decrease_slot()
-		update_slots()
 		remove_item()
+		update_slots()
 
 func open():
 	visible = true
