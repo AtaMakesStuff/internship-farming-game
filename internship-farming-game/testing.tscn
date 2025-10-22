@@ -69,6 +69,7 @@ offset_bottom = 408.0
 [connection signal="npc_clicked" from="npc/Sprite2D" to="dialogue_box" method="_on_sprite_2d_npc_clicked"]
 [connection signal="dialogue_finished" from="dialogue_box/text_box" to="dialogue_box" method="_on_text_box_dialogue_finished"]
 
+[editable path="CanvasLayer/inventory_ui"]
 [editable path="CanvasLayer2/inventory_hotbar_ui"]
 [editable path="npc"]
 [editable path="dialogue_box"]

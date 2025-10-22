@@ -6,6 +6,28 @@ const JUMP_VELOCITY = -400.0
 
 @export var inventory: Inventory
 
+@export var max_health = 100
+@export var current_health: int
+
+func _ready() -> void:
+	current_health = max_health
+
+func _process(delta: float) -> void:
+	if GameState.check_playing():
+		
+		if Input.is_action_just_pressed("right"):
+			GameState.enter_right()
+			$Sprite2D.texture = load("res://art/test-avatar-1.png")
+		elif Input.is_action_just_pressed("left"):
+			GameState.enter_left()
+			$Sprite2D.texture = load("res://art/test-avatar-1-left.png")
+		elif Input.is_action_just_pressed("up"):
+			GameState.enter_up()
+			$Sprite2D.texture = load("res://art/test-avatar-1-back.png")
+		elif Input.is_action_just_pressed("down"):
+			GameState.enter_down()
+			$Sprite2D.texture = load("res://art/test-avatar-1-front.png")
+ 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

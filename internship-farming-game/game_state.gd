@@ -3,6 +3,9 @@ extends Node
 enum Game_State {PLAYING, TALKING, MENU}
 var current_game_state = Game_State.PLAYING
 
+enum Player_Facing_State {RIGHT, LEFT, UP, DOWN}
+var current_player_state = Player_Facing_State.RIGHT
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -38,3 +41,15 @@ func check_menu():
 		return true 
 	else: 
 		return false 
+
+func enter_right():
+	current_player_state = Player_Facing_State.RIGHT
+
+func enter_left():
+	current_player_state = Player_Facing_State.LEFT
+
+func enter_up():
+	current_player_state = Player_Facing_State.UP
+
+func enter_down():
+	current_player_state = Player_Facing_State.DOWN
