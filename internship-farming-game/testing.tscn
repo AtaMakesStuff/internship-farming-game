@@ -102,11 +102,20 @@ offset_bottom = 380.0
 text = "Advance Season"
 
 [node name="testingTime5" type="Button" parent="time"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 376.0
 offset_right = 261.0
 offset_bottom = 407.0
 text = "End Day"
+
+[node name="testingTime6" type="Button" parent="time"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 408.0
+offset_right = 261.0
+offset_bottom = 439.0
+text = "Start Time"
 
 [connection signal="to_remove_slot_number" from="CanvasLayer2/inventory_hotbar_ui" to="player" method="_on_inventory_ui_to_remove_slot_number"]
 [connection signal="send_active_queue" from="CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer" to="CanvasLayer2/inventory_hotbar_ui" method="_on_grid_container_send_active_queue"]
@@ -117,6 +126,7 @@ text = "End Day"
 [connection signal="pressed" from="time/testingTime3" to="time" method="_on_testing_time_3_pressed"]
 [connection signal="pressed" from="time/testingTime4" to="time" method="_on_testing_time_4_pressed"]
 [connection signal="pressed" from="time/testingTime5" to="time" method="_on_testing_time_5_pressed"]
+[connection signal="pressed" from="time/testingTime6" to="time" method="_on_testing_time_6_pressed"]
 
 [editable path="CanvasLayer/inventory_ui"]
 [editable path="CanvasLayer2/inventory_hotbar_ui"]

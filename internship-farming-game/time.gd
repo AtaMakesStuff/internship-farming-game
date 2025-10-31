@@ -3,14 +3,22 @@ extends Control
 @onready var day_text = $DayText
 var current_day = 1
 var max_day = 7
+
 @onready var day_otw_text = $DayOtwText
 var day_otw_state = GameState.current_day_otw_state
+
 @onready var year_text = $YearText
 var current_year = 1
+
 @onready var season_text = $SeasonText
 var season_state = GameState.current_season_state
+
 @onready var time_text = $TimeText
-var current_time = 0.00
+@export var hour_counter = 6
+@onready var pm_time_text = $PMTimeText
+
+@onready var minutes_text = $MinutesText
+var minutes_counter = 00
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -78,6 +86,9 @@ func end_day():
 	advance_day_otw()
 	advance_day()
 
+func start_tracking_minutes():
+	$Timer.start()
+
 func _on_testing_time_pressed() -> void:
 	advance_day()
 
@@ -96,3 +107,42 @@ func _on_testing_time_4_pressed() -> void:
 
 func _on_testing_time_5_pressed() -> void:
 	end_day()
+
+
+func _on_timer_timeout() -> void:
+	increment_minutes()
+
+func increment_hours():
+	if hour_counter <12:
+		hour_counter += 1
+	else:
+		hour_counter = 1
+	if hour_counter == 12:
+		if pm_time_text.text == "PM":
+			pm_time_text.text = "AM"
+		else:
+			pm_time_text.text = "PM"
+	time_text.text = str(hour_counter)
+
+func increment_minutes():
+	if minutes_counter <5:
+		minutes_counter += 1
+	else: 
+		minutes_counter = 0
+		increment_hours()
+	if minutes_counter == 0:
+		minutes_text.text = ":00"
+	elif minutes_counter == 1:
+		minutes_text.text = ":10"
+	elif minutes_counter == 2:
+		minutes_text.text = ":20"
+	elif minutes_counter == 3:
+		minutes_text.text = ":30"
+	elif minutes_counter == 4:
+		minutes_text.text = ":40"
+	elif minutes_counter == 5:
+		minutes_text.text = ":50"
+	start_tracking_minutes()
+
+func _on_testing_time_6_pressed() -> void:
+	start_tracking_minutes()

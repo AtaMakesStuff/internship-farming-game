@@ -25,6 +25,7 @@ offset_bottom = 64.0
 text = "Season"
 
 [node name="DayText" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 168.0
 offset_top = 64.0
 offset_right = 296.0
@@ -32,6 +33,7 @@ offset_bottom = 128.0
 text = "Day"
 
 [node name="DayOtwText" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 72.0
 offset_top = 64.0
 offset_right = 200.0
@@ -39,17 +41,35 @@ offset_bottom = 128.0
 text = "Day Otw"
 
 [node name="YearText" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 168.0
 offset_right = 296.0
 offset_bottom = 64.0
 text = "Year"
 
 [node name="TimeText" type="RichTextLabel" parent="."]
-offset_left = 40.0
-offset_top = 104.0
-offset_right = 168.0
-offset_bottom = 168.0
-text = "Time"
+layout_mode = 0
+offset_left = 43.0
+offset_top = 106.0
+offset_right = 62.0
+offset_bottom = 170.0
+text = "6"
+text_direction = 2
+
+[node name="MinutesText" type="RichTextLabel" parent="."]
+offset_left = 63.0
+offset_top = 106.0
+offset_right = 191.0
+offset_bottom = 170.0
+text = ":00"
+
+[node name="PMTimeText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 106.0
+offset_right = 216.0
+offset_bottom = 170.0
+text = "AM"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -60,24 +80,33 @@ offset_bottom = 104.0
 text = "Day:"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_right = 184.0
 offset_bottom = 40.0
 text = "Year:"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_right = 72.0
 offset_bottom = 40.0
 text = "Season:"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_top = 64.0
 offset_right = 88.0
 offset_bottom = 104.0
 text = "Day Otw:"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
-offset_top = 104.0
-offset_right = 56.0
-offset_bottom = 144.0
+layout_mode = 0
+offset_left = 1.0
+offset_top = 106.0
+offset_right = 57.0
+offset_bottom = 146.0
 text = "Time:"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
