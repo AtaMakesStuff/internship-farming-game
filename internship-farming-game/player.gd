@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 		elif Input.is_action_just_pressed("down"):
 			GameState.enter_down()
 			$Sprite2D.texture = load("res://art/test-avatar-1-front.png")
- 
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

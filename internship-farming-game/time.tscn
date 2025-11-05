@@ -57,6 +57,7 @@ text = "6"
 text_direction = 2
 
 [node name="MinutesText" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 63.0
 offset_top = 106.0
 offset_right = 191.0

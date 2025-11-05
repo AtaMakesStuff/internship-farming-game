@@ -10,7 +10,7 @@ enum Season_State {SPRING, SUMMER, AUTUMN, WINTER}
 var current_season_state = Season_State.SPRING
 
 enum Day_Otw_State {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY}
-var current_day_otw_state = Day_Otw_State.MONDAY
+var current_day_otw_state = Day_Otw_State.MONDAY 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

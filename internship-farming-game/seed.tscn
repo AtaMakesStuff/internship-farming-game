@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://nhouuxwqyt4f"]
+
+[ext_resource type="Script" path="res://hoe.gd" id="1_adqcu"]
+[ext_resource type="Resource" uid="uid://c2y3bxxp8qdts" path="res://inventory/parsnip_seeds.tres" id="2_q3ka0"]
+[ext_resource type="Texture2D" uid="uid://ce2jxt2tlqyca" path="res://icon.svg" id="3_1a537"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akux1"]
+radius = 32.0
+height = 64.0
+
+[node name="parsnip_seeds" type="StaticBody2D"]
+script = ExtResource("1_adqcu")
+item = ExtResource("2_q3ka0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_1a537")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CapsuleShape2D_akux1")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

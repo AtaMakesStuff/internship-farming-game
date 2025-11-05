@@ -1,5 +1,8 @@
 extends Area2D
 
+enum Farm_Tile_State {UNTILLED, TILLED, PLANTED}
+var current_farm_tile_state = Farm_Tile_State.UNTILLED
+
 @export var item: InventoryItem
 var player = SceneMultiplayer
 
