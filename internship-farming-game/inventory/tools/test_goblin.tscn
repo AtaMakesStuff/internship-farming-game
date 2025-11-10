@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bebk2c5p6vod8"]
+
+[ext_resource type="Script" path="res://item_pickup.gd" id="1_nkhxe"]
+[ext_resource type="Resource" uid="uid://c1vofl3i4bava" path="res://inventory/tools/test_goblin.tres" id="2_nptot"]
+[ext_resource type="Texture2D" uid="uid://d20e01t6dy7b7" path="res://art/goblin.png" id="3_ncwd1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akux1"]
+radius = 32.0
+height = 64.0
+
+[node name="TestGoblin" type="StaticBody2D"]
+script = ExtResource("1_nkhxe")
+item = ExtResource("2_nptot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.43051e-06, 1.43051e-06)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ncwd1")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CapsuleShape2D_akux1")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

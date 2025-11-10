@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://c5pdgjs5njxhl"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_djrwd"]
+[ext_resource type="Texture2D" uid="uid://dmk6iw78f50h2" path="res://art/cracked-rock.png" id="2_hqmsc"]
+
+[resource]
+script = ExtResource("1_djrwd")
+name = "Cracked Rock"
+texture = ExtResource("2_hqmsc")
+is_active_item = false

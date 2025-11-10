@@ -62,7 +62,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func collect(item):
-	inventory.insert(item)
+	var was_inventory_full = inventory.insert(item)
+	return was_inventory_full
 
 func _on_inventory_ui_to_remove_slot_number(data: int) -> void:
 	inventory.remove(data)

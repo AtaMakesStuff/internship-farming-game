@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://casinnr6aw1dg"]
+[gd_scene load_steps=25 format=3 uid="uid://casinnr6aw1dg"]
 
 [ext_resource type="PackedScene" uid="uid://c5b0bdgeuwwea" path="res://player.tscn" id="1_m16bd"]
 [ext_resource type="Script" path="res://main_scene_start.gd" id="1_r4d37"]
@@ -10,6 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://cwd443r74rul7" path="res://npc.tscn" id="8_ka1op"]
 [ext_resource type="PackedScene" uid="uid://c11g25xw2akm5" path="res://dialogue_box.tscn" id="9_0hxd5"]
 [ext_resource type="PackedScene" uid="uid://jp21sngpeyyj" path="res://time.tscn" id="10_0a2rx"]
+[ext_resource type="PackedScene" uid="uid://mun4jfyu0vc6" path="res://inventory/tools/hoe_2.tscn" id="11_eca7a"]
+[ext_resource type="PackedScene" uid="uid://bxtjre2s4msy7" path="res://inventory/seeds/strawberry_seeds.tscn" id="12_f40hy"]
+[ext_resource type="PackedScene" uid="uid://cqf5ewita8y8f" path="res://inventory/seeds/carrot_seeds.tscn" id="13_qv7b1"]
+[ext_resource type="PackedScene" uid="uid://xks6uxg8bja2" path="res://inventory/seeds/potato_seeds.tscn" id="14_o0a0v"]
+[ext_resource type="PackedScene" uid="uid://chl2aoiukl2h1" path="res://inventory/seeds/green_bean_seeds.tscn" id="15_1ttn2"]
+[ext_resource type="PackedScene" uid="uid://c28b8ndee5rtm" path="res://inventory/seeds/cabbage_seeds.tscn" id="16_hxoan"]
+[ext_resource type="PackedScene" uid="uid://c0srcclqlb5d6" path="res://inventory/tools/axe_2.tscn" id="17_es7eh"]
+[ext_resource type="PackedScene" uid="uid://brokib6wpxwx5" path="res://inventory/tools/pickaxe.tscn" id="18_3xh8c"]
+[ext_resource type="PackedScene" uid="uid://bgfeve0qtlsmw" path="res://inventory/tools/sword_2.tscn" id="18_uq8nr"]
+[ext_resource type="PackedScene" uid="uid://vb8miodaa6e" path="res://inventory/tools/watering_can.tscn" id="20_rxim8"]
+[ext_resource type="PackedScene" uid="uid://d23ucqncocy62" path="res://inventory/donut.tscn" id="21_iivd4"]
+[ext_resource type="PackedScene" uid="uid://bebk2c5p6vod8" path="res://inventory/tools/test_goblin.tscn" id="22_h43gr"]
+[ext_resource type="PackedScene" uid="uid://paoie55jhjit" path="res://inventory/tools/test_rock.tscn" id="23_b16di"]
+[ext_resource type="PackedScene" uid="uid://x4mrujvg1ne" path="res://inventory/rock_ammo.tscn" id="24_cnsdx"]
 
 [node name="testing" type="Node2D"]
 script = ExtResource("1_r4d37")
@@ -116,6 +130,54 @@ offset_top = 408.0
 offset_right = 261.0
 offset_bottom = 439.0
 text = "Start Time"
+
+[node name="hoe4" parent="." instance=ExtResource("11_eca7a")]
+position = Vector2(72, 568)
+
+[node name="StrawberrySeeds" parent="." instance=ExtResource("12_f40hy")]
+position = Vector2(136, 568)
+
+[node name="CarrotSeeds" parent="." instance=ExtResource("13_qv7b1")]
+position = Vector2(136, 496)
+
+[node name="PotatoSeeds" parent="." instance=ExtResource("14_o0a0v")]
+position = Vector2(120, 428)
+
+[node name="GreenBeanSeeds" parent="." instance=ExtResource("15_1ttn2")]
+position = Vector2(80, 496)
+
+[node name="CabbageSeeds" parent="." instance=ExtResource("16_hxoan")]
+position = Vector2(56, 408)
+
+[node name="Axe2" parent="." instance=ExtResource("17_es7eh")]
+position = Vector2(48, 280)
+
+[node name="Axe22" parent="." instance=ExtResource("17_es7eh")]
+position = Vector2(72, 320)
+
+[node name="Sword2" parent="." instance=ExtResource("18_uq8nr")]
+position = Vector2(128, 368)
+
+[node name="Pickaxe" parent="." instance=ExtResource("18_3xh8c")]
+position = Vector2(32, 464)
+
+[node name="WateringCan" parent="." instance=ExtResource("20_rxim8")]
+position = Vector2(158, 608)
+
+[node name="StrawberrySeeds2" parent="." instance=ExtResource("12_f40hy")]
+position = Vector2(208, 592)
+
+[node name="Donut" parent="." instance=ExtResource("21_iivd4")]
+position = Vector2(40, 624)
+
+[node name="TestGoblin" parent="." instance=ExtResource("22_h43gr")]
+position = Vector2(192, 408)
+
+[node name="TestRock" parent="." instance=ExtResource("23_b16di")]
+position = Vector2(200, 336)
+
+[node name="RockAmmo" parent="." instance=ExtResource("24_cnsdx")]
+position = Vector2(352, 520)
 
 [connection signal="to_remove_slot_number" from="CanvasLayer2/inventory_hotbar_ui" to="player" method="_on_inventory_ui_to_remove_slot_number"]
 [connection signal="send_active_queue" from="CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer" to="CanvasLayer2/inventory_hotbar_ui" method="_on_grid_container_send_active_queue"]
