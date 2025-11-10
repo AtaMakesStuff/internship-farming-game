@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=3 format=3 uid="uid://be22jb0npbrhg"]
+
+[ext_resource type="Script" path="res://inventory_item_seed.gd" id="1_quld0"]
+[ext_resource type="Texture2D" uid="uid://10ybcpk0g8vw" path="res://art/cabbage-seeds.png" id="2_qy02k"]
+
+[resource]
+script = ExtResource("1_quld0")
+current_growth_state = 0
+days_to_grow = 0
+day_growing = 0
+growable_seasons = []
+name = "Cabbage Seeds"
+texture = ExtResource("2_qy02k")
+is_active_item = false

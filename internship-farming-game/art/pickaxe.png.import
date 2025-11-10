@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3qgyhpas0k62"
-path="res://.godot/imported/Hoe-Basic.png-92daa045373ce5b8a6cfbdc538a39eaa.ctex"
+uid="uid://bc6b08evwxu4p"
+path="res://.godot/imported/pickaxe.png-b0aa327b98c90eb750018626abbdf78a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Hoe-Basic.png"
-dest_files=["res://.godot/imported/Hoe-Basic.png-92daa045373ce5b8a6cfbdc538a39eaa.ctex"]
+source_file="res://art/pickaxe.png"
+dest_files=["res://.godot/imported/pickaxe.png-b0aa327b98c90eb750018626abbdf78a.ctex"]
 
 [params]
 

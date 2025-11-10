@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by0xsb3fitncx"
-path="res://.godot/imported/sword.png-ea40eb2819360210d62e8bc46b5a2af4.ctex"
+uid="uid://b4oeoqw8d8lcg"
+path="res://.godot/imported/rock-ammo.png-04587a3d64cf6148aa8bd649c765c110.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sword.png"
-dest_files=["res://.godot/imported/sword.png-ea40eb2819360210d62e8bc46b5a2af4.ctex"]
+source_file="res://art/rock-ammo.png"
+dest_files=["res://.godot/imported/rock-ammo.png-04587a3d64cf6148aa8bd649c765c110.ctex"]
 
 [params]
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=3 format=3 uid="uid://ccum161bxk847"]
+
+[ext_resource type="Script" path="res://inventory_item_seed.gd" id="1_g2u72"]
+[ext_resource type="Texture2D" uid="uid://dj2b2vnw7b1bg" path="res://art/strawberry-seeds.png" id="2_apwry"]
+
+[resource]
+script = ExtResource("1_g2u72")
+current_growth_state = 0
+days_to_grow = 0
+day_growing = 0
+growable_seasons = []
+name = "Strawberry Seeds"
+texture = ExtResource("2_apwry")
+is_active_item = false

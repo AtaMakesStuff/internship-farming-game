@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by0xsb3fitncx"
-path="res://.godot/imported/sword.png-ea40eb2819360210d62e8bc46b5a2af4.ctex"
+uid="uid://cf50nnu2phvqb"
+path="res://.godot/imported/potato-seeds.png-175912a060df5fa386ef122a027d421e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sword.png"
-dest_files=["res://.godot/imported/sword.png-ea40eb2819360210d62e8bc46b5a2af4.ctex"]
+source_file="res://art/potato-seeds.png"
+dest_files=["res://.godot/imported/potato-seeds.png-175912a060df5fa386ef122a027d421e.ctex"]
 
 [params]
 

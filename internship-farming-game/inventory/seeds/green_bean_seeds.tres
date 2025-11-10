@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=3 format=3 uid="uid://crx04e2ugnqtp"]
+
+[ext_resource type="Script" path="res://inventory_item_seed.gd" id="1_xwt2x"]
+[ext_resource type="Texture2D" uid="uid://d12ojxyrnn7mp" path="res://art/green-bean-seeds.png" id="2_qx4t1"]
+
+[resource]
+script = ExtResource("1_xwt2x")
+current_growth_state = 0
+days_to_grow = 0
+day_growing = 0
+growable_seasons = []
+name = "Green Bean Seeds"
+texture = ExtResource("2_qx4t1")
+is_active_item = false

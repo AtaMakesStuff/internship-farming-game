@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by0xsb3fitncx"
-path="res://.godot/imported/sword.png-ea40eb2819360210d62e8bc46b5a2af4.ctex"
+uid="uid://d12ojxyrnn7mp"
+path="res://.godot/imported/green-bean-seeds.png-38dbfbc26b9a6a764431be553a0a0a91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sword.png"
-dest_files=["res://.godot/imported/sword.png-ea40eb2819360210d62e8bc46b5a2af4.ctex"]
+source_file="res://art/green-bean-seeds.png"
+dest_files=["res://.godot/imported/green-bean-seeds.png-38dbfbc26b9a6a764431be553a0a0a91.ctex"]
 
 [params]
 

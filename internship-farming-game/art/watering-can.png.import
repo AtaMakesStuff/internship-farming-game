@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by0xsb3fitncx"
-path="res://.godot/imported/sword.png-ea40eb2819360210d62e8bc46b5a2af4.ctex"
+uid="uid://dhx0tj7ugcm5h"
+path="res://.godot/imported/watering-can.png-6fd3df68ab2edb72c6b8e6bfe21b14df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sword.png"
-dest_files=["res://.godot/imported/sword.png-ea40eb2819360210d62e8bc46b5a2af4.ctex"]
+source_file="res://art/watering-can.png"
+dest_files=["res://.godot/imported/watering-can.png-6fd3df68ab2edb72c6b8e6bfe21b14df.ctex"]
 
 [params]
 

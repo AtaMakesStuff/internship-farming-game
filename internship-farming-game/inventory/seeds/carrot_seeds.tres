@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=3 format=3 uid="uid://bgxs1de8fcp6r"]
+
+[ext_resource type="Script" path="res://inventory_item_seed.gd" id="1_kabvk"]
+[ext_resource type="Texture2D" uid="uid://bu6yeu4e1ixhe" path="res://art/carrot-seeds.png" id="2_c1vy2"]
+
+[resource]
+script = ExtResource("1_kabvk")
+current_growth_state = 0
+days_to_grow = 0
+day_growing = 0
+growable_seasons = []
+name = "Carrot Seeds"
+texture = ExtResource("2_c1vy2")
+is_active_item = false

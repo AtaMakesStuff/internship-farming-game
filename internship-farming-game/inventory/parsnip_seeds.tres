@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Seed" load_steps=2 format=3 uid="uid://c2y3bxxp8qdts"]
-
-[ext_resource type="Script" path="res://inventory_item_seed.gd" id="1_vrt72"]
-
-[resource]
-script = ExtResource("1_vrt72")
-name = "Parsnip"
-is_active_item = false

@@ -1,13 +1,12 @@
 extends Area2D
 
-enum Farm_Tile_State {UNTILLED, TILLED, PLANTED}
+enum Farm_Tile_State {UNTILLED, TILLED, PLANTED, WATERED}
 var current_farm_tile_state = Farm_Tile_State.UNTILLED
 
 @export var item: InventoryItem
 var player = SceneMultiplayer
 
 var is_player_inside = false
-
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = true

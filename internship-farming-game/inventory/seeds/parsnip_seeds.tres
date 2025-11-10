@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=3 format=3 uid="uid://dtdbpr4m01ms3"]
+
+[ext_resource type="Script" path="res://inventory_item_seed.gd" id="1_s3g6f"]
+[ext_resource type="Texture2D" uid="uid://cl4r475qe6ulf" path="res://art/parsnip-seeds.png" id="2_5a70r"]
+
+[resource]
+script = ExtResource("1_s3g6f")
+current_growth_state = 0
+days_to_grow = 0
+day_growing = 0
+growable_seasons = []
+name = "Parsnip Seeds"
+texture = ExtResource("2_5a70r")
+is_active_item = false
