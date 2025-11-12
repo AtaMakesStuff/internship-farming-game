@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy3xf8kokulcv"]
+[gd_scene load_steps=7 format=3 uid="uid://dy3xf8kokulcv"]
 
 [ext_resource type="Script" path="res://farm_tile.gd" id="1_sbqfu"]
 [ext_resource type="Texture2D" uid="uid://bn14bkrr8tfmh" path="res://art/Untilled-Farming-Tile.png" id="3_1jldd"]
 [ext_resource type="Texture2D" uid="uid://dgipnm7r4uus6" path="res://art/Tilled-Farming-Tile.png" id="4_if0id"]
+[ext_resource type="Texture2D" uid="uid://bae4sgdf7t17y" path="res://art/untilled-land.png" id="4_s0xbc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uiasw"]
 size = Vector2(128, 128)
@@ -16,6 +17,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_sbqfu")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, 1.90735e-06)
 scale = Vector2(4, 4)
 texture = ExtResource("3_1jldd")
@@ -24,6 +26,11 @@ texture = ExtResource("3_1jldd")
 visible = false
 scale = Vector2(4, 4)
 texture = ExtResource("4_if0id")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, -3.8147e-06)
+scale = Vector2(4, 4)
+texture = ExtResource("4_s0xbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uiasw")

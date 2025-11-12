@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqf5ewita8y8f"]
 
-[ext_resource type="Script" path="res://item_pickup.gd" id="1_bjihq"]
+[ext_resource type="Script" path="res://inventory/item_pickup.gd" id="1_bjihq"]
 [ext_resource type="Resource" uid="uid://bgxs1de8fcp6r" path="res://inventory/seeds/carrot_seeds.tres" id="2_16md5"]
 [ext_resource type="Texture2D" uid="uid://bu6yeu4e1ixhe" path="res://art/carrot-seeds.png" id="2_81fgn"]
 

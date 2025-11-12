@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://xks6uxg8bja2"]
 
-[ext_resource type="Script" path="res://item_pickup.gd" id="1_1400n"]
+[ext_resource type="Script" path="res://inventory/item_pickup.gd" id="1_1400n"]
 [ext_resource type="Texture2D" uid="uid://cf50nnu2phvqb" path="res://art/potato-seeds.png" id="2_e1qbm"]
 [ext_resource type="Resource" uid="uid://i76m1n6hsdxu" path="res://inventory/seeds/potato_seeds.tres" id="2_yncdp"]
 

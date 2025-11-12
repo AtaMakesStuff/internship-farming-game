@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://mun4jfyu0vc6"]
 
-[ext_resource type="Script" path="res://item_pickup.gd" id="1_sldth"]
+[ext_resource type="Script" path="res://inventory/item_pickup.gd" id="1_sldth"]
 [ext_resource type="Resource" uid="uid://vg840bvhtp57" path="res://inventory/tools/hoe_2.tres" id="2_qu18b"]
 [ext_resource type="Texture2D" uid="uid://cu70cjefwrytx" path="res://art/hoe-2.png" id="3_3xja6"]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Seed" load_steps=3 format=3 uid="uid://i76m1n6hsdxu"]
 
-[ext_resource type="Script" path="res://inventory_item_seed.gd" id="1_qu2cw"]
+[ext_resource type="Script" path="res://inventory/inventory_item_seed.gd" id="1_qu2cw"]
 [ext_resource type="Texture2D" uid="uid://cf50nnu2phvqb" path="res://art/potato-seeds.png" id="2_xgfbp"]
 
 [resource]

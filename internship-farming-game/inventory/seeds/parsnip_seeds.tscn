@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvy6cbncaqy3w"]
 
-[ext_resource type="Script" path="res://item_pickup.gd" id="1_hbq6y"]
+[ext_resource type="Script" path="res://inventory/item_pickup.gd" id="1_hbq6y"]
 [ext_resource type="Resource" uid="uid://dtdbpr4m01ms3" path="res://inventory/seeds/parsnip_seeds.tres" id="2_j0j0j"]
 [ext_resource type="Texture2D" uid="uid://cl4r475qe6ulf" path="res://art/parsnip-seeds.png" id="2_p13u1"]
 

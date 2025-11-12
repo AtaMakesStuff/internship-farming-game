@@ -1,12 +1,16 @@
 extends Area2D
 
-enum Farm_Tile_State {UNTILLED, TILLED, PLANTED, WATERED}
+enum Farm_Tile_State 
+{UNTILLED, TILLED, TILLED_WATERED, 
+TILLED_SEEDED, TILLED_SEEDED_WATERED, TILLED_SPROUTING, 
+TILLED_SPROUTING_WATERED, WATERED}
 var current_farm_tile_state = Farm_Tile_State.UNTILLED
-
+@onready var tile_texture = $Sprite2D
 @export var item: InventoryItem
 var player = SceneMultiplayer
-
 var is_player_inside = false
+
+
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = true
@@ -16,10 +20,13 @@ func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = false
 
-# when player clicks on farm tile and is nearby
-# turn farm tile into tilled texture 
+
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and is_player_inside and is_item_active():
+	
+	# when player clicks on farm tile and is nearby
+	# and has a hoe selected as an active item, then
+	# turn farm tile into tilled texture 
+	if event is InputEventMouseButton and event.pressed and is_player_inside:
 		var tex = $CollisionShape2D.shape
 		if tex == null:
 			return
@@ -30,21 +37,77 @@ func _input(event):
 		var sprite_rect = Rect2(top_left, sprite_size)
 		
 		if sprite_rect.has_point(mouse_pos):
-			$ColorRect.hide()
-			$ColorRect2.show()
+			if is_hoe_active():
+				if current_farm_tile_state == Farm_Tile_State.UNTILLED:
+					enter_tilled()
+				elif current_farm_tile_state == Farm_Tile_State.WATERED:
+					enter_tilled_watered()
+				else:
+					pass
+			elif is_watering_can_active():
+				if current_farm_tile_state == Farm_Tile_State.UNTILLED:
+					enter_watered()
+				elif current_farm_tile_state == Farm_Tile_State.TILLED:
+					enter_tilled_watered()
+				elif current_farm_tile_state == Farm_Tile_State.TILLED_SEEDED:
+					enter_tilled_seeded_watered()
+				elif current_farm_tile_state == Farm_Tile_State.TILLED_SPROUTING:
+					enter_tilled_sprouting_watered()
+				else:
+					pass
 
 # checks if array is empty
 # as well as if item is empty
 # NOTE: change final line if hoe is no longer the Item name
-func is_item_active():
+func is_hoe_active():
 	if !$"../CanvasLayer2/inventory_hotbar_ui".inventory.slots.is_empty():
 		if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item:
-			if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item.name == "hoe":
+			if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item.name == "Hoe" || $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item.name == "Hoe 2":
 				return true
 	else:
 		return false
-	
-	
+
+func is_watering_can_active():
+	if !$"../CanvasLayer2/inventory_hotbar_ui".inventory.slots.is_empty():
+		if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item:
+			if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item.name == "Watering Can":
+				return true
+	else:
+		return false
+
+func enter_untilled():
+	current_farm_tile_state = Farm_Tile_State.UNTILLED
+	tile_texture.texture = preload("res://art/untilled-land.png")
+
+func enter_tilled():
+	current_farm_tile_state = Farm_Tile_State.TILLED
+	tile_texture.texture = preload("res://art/tilled-land.png")
+
+func enter_tilled_watered():
+	current_farm_tile_state = Farm_Tile_State.TILLED_WATERED
+	tile_texture.texture = preload("res://art/tilled-watered-land.png")
+
+func enter_tilled_seeded():
+	current_farm_tile_state = Farm_Tile_State.TILLED_SEEDED
+	tile_texture.texture = preload("res://art/tilled-seeded-land.png")
+
+func enter_tilled_seeded_watered():
+	current_farm_tile_state = Farm_Tile_State.TILLED_SEEDED_WATERED
+	tile_texture.texture = preload("res://art/tilled-seeded-watered-land.png")
+
+func enter_tilled_sprouting():
+	current_farm_tile_state = Farm_Tile_State.TILLED_SPROUTING
+	tile_texture.texture = preload("res://art/tilled-sprouting-land.png")
+
+func enter_tilled_sprouting_watered():
+	current_farm_tile_state = Farm_Tile_State.TILLED_SPROUTING_WATERED
+	tile_texture.texture = preload("res://art/tilled-sprouting-watered-land.png")
+
+func enter_watered():
+	current_farm_tile_state = Farm_Tile_State.WATERED
+	tile_texture.texture = preload("res://art/watered-land.png")
+
+
 
 #experimenting with making farm tile harvestable
 """

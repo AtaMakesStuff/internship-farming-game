@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dltsw14y8vcof"]
 
-[ext_resource type="Script" path="res://item_pickup.gd" id="1_be0hf"]
+[ext_resource type="Script" path="res://inventory/item_pickup.gd" id="1_be0hf"]
 [ext_resource type="Resource" uid="uid://c25e2ddvjxgdu" path="res://inventory/tools/axe.tres" id="2_qk6y4"]
 [ext_resource type="Texture2D" uid="uid://closyt5kaemue" path="res://art/axe.png" id="3_ffp8g"]
 

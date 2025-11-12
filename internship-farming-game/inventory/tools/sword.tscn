@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bg323oxrw7006"]
 
-[ext_resource type="Script" path="res://item_pickup.gd" id="1_g1vh1"]
+[ext_resource type="Script" path="res://inventory/item_pickup.gd" id="1_g1vh1"]
 [ext_resource type="Resource" uid="uid://dvikaog0xvpk4" path="res://inventory/tools/sword.tres" id="2_5pqlj"]
 [ext_resource type="Texture2D" uid="uid://by0xsb3fitncx" path="res://art/sword.png" id="3_57j3m"]
 

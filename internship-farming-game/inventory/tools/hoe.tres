@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_cuvk5")
-name = "hoe"
+name = "Hoe"
 texture = ExtResource("2_7bhk1")
 is_active_item = false
