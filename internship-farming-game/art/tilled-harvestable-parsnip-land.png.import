@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhrijpfnib3mu"
-path="res://.godot/imported/test-donut-all.png-3732609d9761c463e8002872709365ca.ctex"
+uid="uid://cbkfl5qqam74b"
+path="res://.godot/imported/tilled-harvestable-parsnip-land.png-05d60eb0dc9fae5ec88987f5b6da323a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/test-donut-all.png"
-dest_files=["res://.godot/imported/test-donut-all.png-3732609d9761c463e8002872709365ca.ctex"]
+source_file="res://art/tilled-harvestable-parsnip-land.png"
+dest_files=["res://.godot/imported/tilled-harvestable-parsnip-land.png-05d60eb0dc9fae5ec88987f5b6da323a.ctex"]
 
 [params]
 

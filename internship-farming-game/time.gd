@@ -1,5 +1,7 @@
 extends Control
 
+signal check_growth 
+
 @onready var day_text = $DayText
 var current_day = 1
 var max_day = 7
@@ -85,9 +87,18 @@ func end_day():
 		advance_season()
 	advance_day_otw()
 	advance_day()
+	minutes_counter = 00
+	hour_counter = 6
+	minutes_text.text = ":00"
+	time_text.text = "6"
+	pm_time_text.text = "AM"
+	check_growth.emit()
 
 func start_tracking_minutes():
 	$Timer.start()
+
+func stop_time():
+	$Timer.stop()
 
 func _on_testing_time_pressed() -> void:
 	advance_day()
@@ -113,7 +124,9 @@ func _on_timer_timeout() -> void:
 	increment_minutes()
 
 func increment_hours():
-	if hour_counter <12:
+	if pm_time_text.text == "AM" && hour_counter == 1:
+		end_day()
+	elif hour_counter <12:
 		hour_counter += 1
 	else:
 		hour_counter = 1
@@ -146,3 +159,7 @@ func increment_minutes():
 
 func _on_testing_time_6_pressed() -> void:
 	start_tracking_minutes()
+
+
+func _on_testing_time_7_pressed() -> void:
+	stop_time()

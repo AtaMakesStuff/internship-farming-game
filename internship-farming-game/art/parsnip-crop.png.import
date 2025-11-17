@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgipnm7r4uus6"
-path="res://.godot/imported/Tilled-Farming-Tile.png-208acb204b76286f96bf57dc96842827.ctex"
+uid="uid://bh35absq1j1fq"
+path="res://.godot/imported/parsnip-crop.png-db0be1dc2543da246321a611bd5e5fbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Tilled-Farming-Tile.png"
-dest_files=["res://.godot/imported/Tilled-Farming-Tile.png-208acb204b76286f96bf57dc96842827.ctex"]
+source_file="res://art/parsnip-crop.png"
+dest_files=["res://.godot/imported/parsnip-crop.png-db0be1dc2543da246321a611bd5e5fbf.ctex"]
 
 [params]
 

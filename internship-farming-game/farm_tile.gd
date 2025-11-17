@@ -3,7 +3,8 @@ extends Area2D
 enum Farm_Tile_State 
 {UNTILLED, TILLED, TILLED_WATERED, 
 TILLED_SEEDED, TILLED_SEEDED_WATERED, TILLED_SPROUTING, 
-TILLED_SPROUTING_WATERED, WATERED}
+TILLED_SPROUTING_WATERED, TILLED_HARVESTABLE, 
+TILLED_HARVESTABLE_WATERED, WATERED}
 var current_farm_tile_state = Farm_Tile_State.UNTILLED
 @onready var tile_texture = $Sprite2D
 @export var item: InventoryItem
@@ -37,7 +38,12 @@ func _input(event):
 		var sprite_rect = Rect2(top_left, sprite_size)
 		
 		if sprite_rect.has_point(mouse_pos):
-			if is_hoe_active():
+			if current_farm_tile_state == Farm_Tile_State.TILLED_HARVESTABLE || current_farm_tile_state == Farm_Tile_State.TILLED_HARVESTABLE_WATERED:
+				var harvest = load("res://inventory/crops/parsnip.tscn")
+				var harvest_instance = harvest.instantiate()
+				add_child(harvest_instance)
+				enter_untilled()
+			elif is_hoe_active():
 				if current_farm_tile_state == Farm_Tile_State.UNTILLED:
 					enter_tilled()
 				elif current_farm_tile_state == Farm_Tile_State.WATERED:
@@ -53,8 +59,29 @@ func _input(event):
 					enter_tilled_seeded_watered()
 				elif current_farm_tile_state == Farm_Tile_State.TILLED_SPROUTING:
 					enter_tilled_sprouting_watered()
+				elif current_farm_tile_state == Farm_Tile_State.TILLED_HARVESTABLE:
+					enter_tilled_harvestable_watered()
 				else:
 					pass
+			elif is_seeds_active():
+				if current_farm_tile_state == Farm_Tile_State.TILLED:
+					enter_tilled_seeded()
+					Input.action_press("drop_item")
+					Input.action_release("drop_item")
+				elif current_farm_tile_state == Farm_Tile_State.TILLED_WATERED:
+					enter_tilled_seeded_watered()
+					Input.action_press("drop_item")
+					Input.action_release("drop_item")
+
+func _on_time_check_growth() -> void:
+	if current_farm_tile_state == Farm_Tile_State.TILLED || current_farm_tile_state == Farm_Tile_State.TILLED_WATERED || current_farm_tile_state == Farm_Tile_State.WATERED:
+		enter_untilled()
+	elif current_farm_tile_state == Farm_Tile_State.TILLED_SEEDED_WATERED:
+		enter_tilled_sprouting()
+	elif current_farm_tile_state == Farm_Tile_State.TILLED_SPROUTING_WATERED:
+		enter_tilled_harvestable()
+	else:
+		pass
 
 # checks if array is empty
 # as well as if item is empty
@@ -74,6 +101,15 @@ func is_watering_can_active():
 				return true
 	else:
 		return false
+
+func is_seeds_active():
+	if !$"../CanvasLayer2/inventory_hotbar_ui".inventory.slots.is_empty():
+		if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item:
+			if $"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item.name == "Parsnip Seeds":
+				return true
+	else:
+		return false
+
 
 func enter_untilled():
 	current_farm_tile_state = Farm_Tile_State.UNTILLED
@@ -102,6 +138,14 @@ func enter_tilled_sprouting():
 func enter_tilled_sprouting_watered():
 	current_farm_tile_state = Farm_Tile_State.TILLED_SPROUTING_WATERED
 	tile_texture.texture = preload("res://art/tilled-sprouting-watered-land.png")
+	
+func enter_tilled_harvestable():
+	current_farm_tile_state = Farm_Tile_State.TILLED_HARVESTABLE
+	tile_texture.texture = preload("res://art/tilled-harvestable-parsnip-land.png")
+	
+func enter_tilled_harvestable_watered():
+	current_farm_tile_state = Farm_Tile_State.TILLED_HARVESTABLE_WATERED
+	tile_texture.texture = preload("res://art/tilled-harvestable-parsnip-watered-land.png")
 
 func enter_watered():
 	current_farm_tile_state = Farm_Tile_State.WATERED
