@@ -52,6 +52,19 @@ func _process(delta):
 			decrease_slot()
 		remove_item()
 		update_slots()
+	
+	# I4 
+	# working on cycling inventory
+	if Input.is_action_just_pressed("next_inventory_row"):
+		if !is_main_inventory and GameState.check_playing():
+			var temp_inventory = load("res://inventory/temp_inventory.tres")
+			for i in 5:
+				temp_inventory.slots[i] = inventory.slots[i]
+			for i in 10:
+				inventory.slots[i] = inventory.slots[i+5]
+			for i in 5:
+				inventory.slots[i+10] = temp_inventory.slots[i]
+			update_slots()
 
 func open():
 	visible = true
