@@ -219,6 +219,7 @@ position = Vector2(448, 0)
 
 [connection signal="money_change" from="player" to="money" method="set_money"]
 [connection signal="money_sold" from="CanvasLayer/inventory_ui" to="player" method="_on_inventory_ui_money_sold"]
+[connection signal="money_sold" from="CanvasLayer2/inventory_hotbar_ui" to="player" method="_on_inventory_ui_money_sold"]
 [connection signal="to_remove_slot_number" from="CanvasLayer2/inventory_hotbar_ui" to="player" method="_on_inventory_ui_to_remove_slot_number"]
 [connection signal="send_active_queue" from="CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer" to="CanvasLayer2/inventory_hotbar_ui" method="_on_grid_container_send_active_queue"]
 [connection signal="npc_clicked" from="npc/Sprite2D" to="dialogue_box" method="_on_sprite_2d_npc_clicked"]
@@ -235,6 +236,7 @@ position = Vector2(448, 0)
 [connection signal="pressed" from="time/testingTime6" to="time" method="_on_testing_time_6_pressed"]
 [connection signal="pressed" from="time/testingTime7" to="time" method="_on_testing_time_7_pressed"]
 [connection signal="pressed" from="shipping_bin/Button" to="CanvasLayer/inventory_ui" method="sell_items"]
+[connection signal="pressed" from="shipping_bin/Button" to="CanvasLayer2/inventory_hotbar_ui" method="sell_items"]
 
 [editable path="CanvasLayer/inventory_ui"]
 [editable path="CanvasLayer2/inventory_hotbar_ui"]

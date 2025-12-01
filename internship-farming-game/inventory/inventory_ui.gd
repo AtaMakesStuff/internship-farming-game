@@ -122,12 +122,12 @@ func sell_items():
 	if !$"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots.is_empty():
 		if $"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item:
 			if $"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item is Crop || $"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item is Seed:
-				money_to_add += $"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item.sell_price
-				decrease_slot()
-				remove_item()
-				update_slots()
-				print("removed!")
-	money_sold.emit(money_to_add)
+				if !is_main_inventory and GameState.check_playing():
+					money_to_add += get_tree().get_root().get_node("testing/CanvasLayer2/inventory_hotbar_ui").inventory.slots[get_tree().get_root().get_node("testing/CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer").active_queue].item.sell_price
+					decrease_slot()
+					remove_item()
+					update_slots()
+					money_sold.emit(money_to_add)
 
 
 
