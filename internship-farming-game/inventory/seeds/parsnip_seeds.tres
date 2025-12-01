@@ -17,6 +17,7 @@ current_growth_state = 0
 days_to_grow = 0
 day_growing = 0
 growable_seasons = []
+sell_price = 20
 future_crop = ExtResource("1_y2md0")
 future_crop_scene = ExtResource("2_ytyf8")
 tilled_seeded = ExtResource("6_vdc8d")

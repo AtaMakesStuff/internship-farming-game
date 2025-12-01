@@ -1,6 +1,5 @@
 extends Control
 
-signal new_active_queue_amount(int)
 var active_queue_holder
 @onready var inventory: Inventory = preload("res://inventory/playerInventory.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
@@ -13,6 +12,8 @@ signal to_remove_slot_number(data: int)
 
 # I2
 @export var is_main_inventory = false 
+
+signal money_sold(data: int)
 
 
 func _ready ():
@@ -58,12 +59,18 @@ func _process(delta):
 	if Input.is_action_just_pressed("next_inventory_row"):
 		if !is_main_inventory and GameState.check_playing():
 			var temp_inventory = load("res://inventory/temp_inventory.tres")
+			var temp_active = 0
+			for i in 5:
+				if inventory.slots[i].is_active == true:
+					temp_active = i
+					inventory.slots[i].is_active = false
 			for i in 5:
 				temp_inventory.slots[i] = inventory.slots[i]
 			for i in 10:
 				inventory.slots[i] = inventory.slots[i+5]
 			for i in 5:
 				inventory.slots[i+10] = temp_inventory.slots[i]
+			inventory.slots[temp_active].is_active = true
 			update_slots()
 
 func open():
@@ -106,6 +113,22 @@ func remove_item():
 			slot_number_to_be_removed = i
 			to_remove_slot_number.emit(slot_number_to_be_removed)
 			inventory.slots[i].to_be_removed = false
+
+# I5
+# Change selling function to work with more than crops and seeds 
+func sell_items():
+	print("started!")
+	var money_to_add = 0
+	if !$"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots.is_empty():
+		if $"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item:
+			if $"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item is Crop || $"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item is Seed:
+				money_to_add += $"../../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item.sell_price
+				decrease_slot()
+				remove_item()
+				update_slots()
+				print("removed!")
+	money_sold.emit(money_to_add)
+
 
 
 # trying to handle scrolling equating moving the active slot

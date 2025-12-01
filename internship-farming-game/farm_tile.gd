@@ -68,7 +68,6 @@ func _input(event):
 			elif is_seeds_active():
 				if current_farm_tile_state == Farm_Tile_State.TILLED:
 					tile_inventory.insert($"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item)
-					print("made it!")
 					enter_tilled_seeded()
 					Input.action_press("drop_item")
 					Input.action_release("drop_item")

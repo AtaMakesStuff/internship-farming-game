@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://casinnr6aw1dg"]
+[gd_scene load_steps=30 format=3 uid="uid://casinnr6aw1dg"]
 
 [ext_resource type="PackedScene" uid="uid://c5b0bdgeuwwea" path="res://player.tscn" id="1_m16bd"]
 [ext_resource type="Script" path="res://main_scene_start.gd" id="1_r4d37"]
@@ -17,7 +17,18 @@
 [ext_resource type="PackedScene" uid="uid://cqf5ewita8y8f" path="res://inventory/seeds/carrot_seeds.tscn" id="16_b3t3f"]
 [ext_resource type="PackedScene" uid="uid://xks6uxg8bja2" path="res://inventory/seeds/potato_seeds.tscn" id="17_qvhf2"]
 [ext_resource type="PackedScene" uid="uid://bxtjre2s4msy7" path="res://inventory/seeds/strawberry_seeds.tscn" id="18_j5oxk"]
+[ext_resource type="PackedScene" uid="uid://ch4ywybt3q0kn" path="res://inventory/crops/potato.tscn" id="19_fqunx"]
+[ext_resource type="PackedScene" uid="uid://putr7uf8oidx" path="res://inventory/crops/parsnip.tscn" id="20_mde5u"]
 [ext_resource type="PackedScene" uid="uid://vb8miodaa6e" path="res://inventory/tools/watering_can.tscn" id="20_rxim8"]
+[ext_resource type="PackedScene" uid="uid://ck23y7yl45ase" path="res://inventory/crops/green_bean.tscn" id="21_8ts74"]
+[ext_resource type="PackedScene" uid="uid://snv72mu40f4v" path="res://inventory/crops/carrot.tscn" id="22_t4e75"]
+[ext_resource type="PackedScene" uid="uid://dvrkf247ui0gg" path="res://inventory/crops/cabbage.tscn" id="23_yevmg"]
+[ext_resource type="PackedScene" uid="uid://bt4hko1mgn770" path="res://inventory/crops/strawberry.tscn" id="24_a57j3"]
+[ext_resource type="PackedScene" uid="uid://d23ucqncocy62" path="res://inventory/donut.tscn" id="25_p7emg"]
+[ext_resource type="PackedScene" uid="uid://dltsw14y8vcof" path="res://inventory/tools/axe.tscn" id="26_n2165"]
+[ext_resource type="PackedScene" uid="uid://c0srcclqlb5d6" path="res://inventory/tools/axe_2.tscn" id="27_eay88"]
+[ext_resource type="PackedScene" uid="uid://brgj7mh3s2he5" path="res://money.tscn" id="28_g25nk"]
+[ext_resource type="PackedScene" uid="uid://bg4kv6ogpk246" path="res://shipping_bin.tscn" id="29_rygm8"]
 
 [node name="testing" type="Node2D"]
 script = ExtResource("1_r4d37")
@@ -170,6 +181,44 @@ position = Vector2(80, 480)
 [node name="StrawberrySeeds2" parent="." instance=ExtResource("18_j5oxk")]
 position = Vector2(128, 480)
 
+[node name="Potato" parent="." instance=ExtResource("19_fqunx")]
+position = Vector2(40, 552)
+
+[node name="Parsnip" parent="." instance=ExtResource("20_mde5u")]
+position = Vector2(160, 560)
+
+[node name="Green Bean" parent="." instance=ExtResource("21_8ts74")]
+position = Vector2(96, 568)
+
+[node name="Carrot" parent="." instance=ExtResource("22_t4e75")]
+position = Vector2(104, 528)
+
+[node name="Cabbage" parent="." instance=ExtResource("23_yevmg")]
+position = Vector2(24, 608)
+
+[node name="Strawberry" parent="." instance=ExtResource("24_a57j3")]
+position = Vector2(136, 624)
+
+[node name="Donut" parent="." instance=ExtResource("25_p7emg")]
+position = Vector2(88, 616)
+
+[node name="Axe" parent="." instance=ExtResource("26_n2165")]
+position = Vector2(32, 520)
+
+[node name="Axe2" parent="." instance=ExtResource("27_eay88")]
+position = Vector2(144, 528)
+
+[node name="money" parent="." instance=ExtResource("28_g25nk")]
+offset_left = 1080.0
+offset_top = 128.0
+offset_right = 1080.0
+offset_bottom = 128.0
+
+[node name="shipping_bin" parent="." instance=ExtResource("29_rygm8")]
+position = Vector2(448, 0)
+
+[connection signal="money_change" from="player" to="money" method="set_money"]
+[connection signal="money_sold" from="CanvasLayer/inventory_ui" to="player" method="_on_inventory_ui_money_sold"]
 [connection signal="to_remove_slot_number" from="CanvasLayer2/inventory_hotbar_ui" to="player" method="_on_inventory_ui_to_remove_slot_number"]
 [connection signal="send_active_queue" from="CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer" to="CanvasLayer2/inventory_hotbar_ui" method="_on_grid_container_send_active_queue"]
 [connection signal="npc_clicked" from="npc/Sprite2D" to="dialogue_box" method="_on_sprite_2d_npc_clicked"]
@@ -185,8 +234,10 @@ position = Vector2(128, 480)
 [connection signal="pressed" from="time/testingTime5" to="time" method="_on_testing_time_5_pressed"]
 [connection signal="pressed" from="time/testingTime6" to="time" method="_on_testing_time_6_pressed"]
 [connection signal="pressed" from="time/testingTime7" to="time" method="_on_testing_time_7_pressed"]
+[connection signal="pressed" from="shipping_bin/Button" to="CanvasLayer/inventory_ui" method="sell_items"]
 
 [editable path="CanvasLayer/inventory_ui"]
 [editable path="CanvasLayer2/inventory_hotbar_ui"]
 [editable path="npc"]
 [editable path="dialogue_box"]
+[editable path="shipping_bin"]

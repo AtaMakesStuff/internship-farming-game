@@ -1,14 +1,15 @@
-extends InventoryItem
+extends Control
 
-class_name Crop
-
-@export var sell_price: int
+@onready var money_label = $RichTextLabel2
+var starting_money = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	money_label.text = str(starting_money)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func set_money(int):
+	money_label.text = str(int)

@@ -9,6 +9,9 @@ const JUMP_VELOCITY = -400.0
 @export var max_health = 100
 @export var current_health: int
 
+@export var current_money: int
+signal money_change(data: int)
+
 func _ready() -> void:
 	current_health = max_health
 
@@ -27,6 +30,7 @@ func _process(delta: float) -> void:
 		elif Input.is_action_just_pressed("down"):
 			GameState.enter_down()
 			$Sprite2D.texture = load("res://art/test-avatar-1-front.png")
+	money_change.emit(current_money)
 
 
 func _physics_process(delta: float) -> void:
@@ -67,3 +71,7 @@ func collect(item):
 
 func _on_inventory_ui_to_remove_slot_number(data: int) -> void:
 	inventory.remove(data)
+
+
+func _on_inventory_ui_money_sold(data: int) -> void:
+	current_money += data
