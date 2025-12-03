@@ -12,7 +12,8 @@ var current_farm_tile_state = Farm_Tile_State.UNTILLED
 var player = SceneMultiplayer
 var is_player_inside = false
 
-
+# Rip out recognition of player being near farm tile
+"""
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = true
@@ -21,7 +22,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = false
-
+"""
 
 func _input(event):
 	
@@ -50,19 +51,6 @@ func _input(event):
 					enter_tilled()
 				elif current_farm_tile_state == Farm_Tile_State.WATERED:
 					enter_tilled_watered()
-				else:
-					pass
-			elif is_watering_can_active():
-				if current_farm_tile_state == Farm_Tile_State.UNTILLED:
-					enter_watered()
-				elif current_farm_tile_state == Farm_Tile_State.TILLED:
-					enter_tilled_watered()
-				elif current_farm_tile_state == Farm_Tile_State.TILLED_SEEDED:
-					enter_tilled_seeded_watered()
-				elif current_farm_tile_state == Farm_Tile_State.TILLED_SPROUTING:
-					enter_tilled_sprouting_watered()
-				elif current_farm_tile_state == Farm_Tile_State.TILLED_HARVESTABLE:
-					enter_tilled_harvestable_watered()
 				else:
 					pass
 			elif is_seeds_active():
