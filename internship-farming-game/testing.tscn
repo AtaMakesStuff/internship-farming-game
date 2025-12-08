@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://casinnr6aw1dg"]
+[gd_scene load_steps=24 format=3 uid="uid://casinnr6aw1dg"]
 
 [ext_resource type="PackedScene" uid="uid://c5b0bdgeuwwea" path="res://player.tscn" id="1_m16bd"]
 [ext_resource type="Script" path="res://main_scene_start.gd" id="1_r4d37"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cw1ce7papfu5u" path="res://inventory/inventory.tscn" id="3_as27f"]
 [ext_resource type="Resource" uid="uid://natwx1doa12b" path="res://inventory/tile_inventory.tres" id="3_cow4w"]
 [ext_resource type="Resource" uid="uid://d35ex3pbe0hls" path="res://inventory/tile_inventory_2.tres" id="4_n7624"]
+[ext_resource type="Resource" uid="uid://b41dh512xtwaf" path="res://inventory/tile_inventory_3.tres" id="5_abl4v"]
+[ext_resource type="Resource" uid="uid://l25sixbvqvyt" path="res://inventory/tile_inventory_4.tres" id="6_n5jdq"]
 [ext_resource type="PackedScene" uid="uid://cdyy60hxi7k4a" path="res://inventory/inventory_hotbar_ui.tscn" id="7_n8qdd"]
 [ext_resource type="PackedScene" uid="uid://cwd443r74rul7" path="res://npc.tscn" id="8_ka1op"]
 [ext_resource type="PackedScene" uid="uid://c11g25xw2akm5" path="res://dialogue_box.tscn" id="9_0hxd5"]
@@ -14,19 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://cvy6cbncaqy3w" path="res://inventory/seeds/parsnip_seeds.tscn" id="12_ovkm3"]
 [ext_resource type="PackedScene" uid="uid://chl2aoiukl2h1" path="res://inventory/seeds/green_bean_seeds.tscn" id="13_uh4e5"]
 [ext_resource type="PackedScene" uid="uid://c28b8ndee5rtm" path="res://inventory/seeds/cabbage_seeds.tscn" id="14_rr00h"]
-[ext_resource type="PackedScene" uid="uid://cqf5ewita8y8f" path="res://inventory/seeds/carrot_seeds.tscn" id="16_b3t3f"]
-[ext_resource type="PackedScene" uid="uid://xks6uxg8bja2" path="res://inventory/seeds/potato_seeds.tscn" id="17_qvhf2"]
 [ext_resource type="PackedScene" uid="uid://bxtjre2s4msy7" path="res://inventory/seeds/strawberry_seeds.tscn" id="18_j5oxk"]
-[ext_resource type="PackedScene" uid="uid://ch4ywybt3q0kn" path="res://inventory/crops/potato.tscn" id="19_fqunx"]
-[ext_resource type="PackedScene" uid="uid://putr7uf8oidx" path="res://inventory/crops/parsnip.tscn" id="20_mde5u"]
+[ext_resource type="PackedScene" uid="uid://brokib6wpxwx5" path="res://inventory/tools/pickaxe.tscn" id="20_blb3g"]
 [ext_resource type="PackedScene" uid="uid://vb8miodaa6e" path="res://inventory/tools/watering_can.tscn" id="20_rxim8"]
-[ext_resource type="PackedScene" uid="uid://ck23y7yl45ase" path="res://inventory/crops/green_bean.tscn" id="21_8ts74"]
-[ext_resource type="PackedScene" uid="uid://snv72mu40f4v" path="res://inventory/crops/carrot.tscn" id="22_t4e75"]
-[ext_resource type="PackedScene" uid="uid://dvrkf247ui0gg" path="res://inventory/crops/cabbage.tscn" id="23_yevmg"]
-[ext_resource type="PackedScene" uid="uid://bt4hko1mgn770" path="res://inventory/crops/strawberry.tscn" id="24_a57j3"]
-[ext_resource type="PackedScene" uid="uid://d23ucqncocy62" path="res://inventory/donut.tscn" id="25_p7emg"]
+[ext_resource type="PackedScene" uid="uid://ckxywn14ur284" path="res://inventory/tools/hammer.tscn" id="21_kwqwv"]
 [ext_resource type="PackedScene" uid="uid://dltsw14y8vcof" path="res://inventory/tools/axe.tscn" id="26_n2165"]
-[ext_resource type="PackedScene" uid="uid://c0srcclqlb5d6" path="res://inventory/tools/axe_2.tscn" id="27_eay88"]
 [ext_resource type="PackedScene" uid="uid://brgj7mh3s2he5" path="res://money.tscn" id="28_g25nk"]
 [ext_resource type="PackedScene" uid="uid://bg4kv6ogpk246" path="res://shipping_bin.tscn" id="29_rygm8"]
 
@@ -39,15 +33,15 @@ tile_inventory = ExtResource("3_cow4w")
 
 [node name="farm_tile2" parent="." instance=ExtResource("2_5abx4")]
 position = Vector2(352, 160)
-tile_inventory = ExtResource("3_cow4w")
+tile_inventory = ExtResource("4_n7624")
 
 [node name="farm_tile3" parent="." instance=ExtResource("2_5abx4")]
 position = Vector2(416, 160)
-tile_inventory = ExtResource("3_cow4w")
+tile_inventory = ExtResource("5_abl4v")
 
 [node name="farm_tile4" parent="." instance=ExtResource("2_5abx4")]
-position = Vector2(288, 287)
-tile_inventory = ExtResource("4_n7624")
+position = Vector2(288, 224)
+tile_inventory = ExtResource("6_n5jdq")
 
 [node name="player" parent="." instance=ExtResource("1_m16bd")]
 position = Vector2(224, 128)
@@ -151,62 +145,32 @@ position = Vector2(40, 176)
 [node name="ParsnipSeeds2" parent="." instance=ExtResource("12_ovkm3")]
 position = Vector2(152, 233)
 
-[node name="CabbageSeeds" parent="." instance=ExtResource("14_rr00h")]
-position = Vector2(32, 336)
-
-[node name="CabbageSeeds2" parent="." instance=ExtResource("14_rr00h")]
-position = Vector2(80, 376)
-
 [node name="GreenBeanSeeds" parent="." instance=ExtResource("13_uh4e5")]
 position = Vector2(144, 296)
 
 [node name="GreenBeanSeeds2" parent="." instance=ExtResource("13_uh4e5")]
 position = Vector2(80, 288)
 
-[node name="CarrotSeeds" parent="." instance=ExtResource("16_b3t3f")]
-position = Vector2(136, 368)
-
-[node name="CarrotSeeds2" parent="." instance=ExtResource("16_b3t3f")]
-position = Vector2(32, 392)
-
-[node name="PotatoSeeds" parent="." instance=ExtResource("17_qvhf2")]
-position = Vector2(96, 432)
-
-[node name="PotatoSeeds2" parent="." instance=ExtResource("17_qvhf2")]
-position = Vector2(40, 448)
-
 [node name="StrawberrySeeds" parent="." instance=ExtResource("18_j5oxk")]
-position = Vector2(80, 480)
+position = Vector2(144, 448)
 
 [node name="StrawberrySeeds2" parent="." instance=ExtResource("18_j5oxk")]
-position = Vector2(128, 480)
+position = Vector2(184, 407)
 
-[node name="Potato" parent="." instance=ExtResource("19_fqunx")]
-position = Vector2(40, 552)
+[node name="CabbageSeeds" parent="." instance=ExtResource("14_rr00h")]
+position = Vector2(104, 344)
 
-[node name="Parsnip" parent="." instance=ExtResource("20_mde5u")]
-position = Vector2(160, 560)
-
-[node name="Green Bean" parent="." instance=ExtResource("21_8ts74")]
-position = Vector2(96, 568)
-
-[node name="Carrot" parent="." instance=ExtResource("22_t4e75")]
-position = Vector2(104, 528)
-
-[node name="Cabbage" parent="." instance=ExtResource("23_yevmg")]
-position = Vector2(24, 608)
-
-[node name="Strawberry" parent="." instance=ExtResource("24_a57j3")]
-position = Vector2(136, 624)
-
-[node name="Donut" parent="." instance=ExtResource("25_p7emg")]
-position = Vector2(88, 616)
+[node name="CabbageSeeds2" parent="." instance=ExtResource("14_rr00h")]
+position = Vector2(72, 384)
 
 [node name="Axe" parent="." instance=ExtResource("26_n2165")]
-position = Vector2(32, 520)
+position = Vector2(40, 368)
 
-[node name="Axe2" parent="." instance=ExtResource("27_eay88")]
-position = Vector2(144, 528)
+[node name="Pickaxe" parent="." instance=ExtResource("20_blb3g")]
+position = Vector2(168, 368)
+
+[node name="Hammer" parent="." instance=ExtResource("21_kwqwv")]
+position = Vector2(120, 400)
 
 [node name="money" parent="." instance=ExtResource("28_g25nk")]
 offset_left = 1080.0

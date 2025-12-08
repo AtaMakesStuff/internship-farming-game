@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_7xqra")
-sell_price = 0
+sell_price = 60
 name = "Green Bean"
 texture = ExtResource("2_fx6m1")
 is_active_item = false
