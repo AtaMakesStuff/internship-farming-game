@@ -181,6 +181,9 @@ offset_bottom = 128.0
 [node name="shipping_bin" parent="." instance=ExtResource("29_rygm8")]
 position = Vector2(448, 0)
 
+[node name="RichTextLabel" parent="shipping_bin" index="3"]
+mouse_default_cursor_shape = 1
+
 [connection signal="money_change" from="player" to="money" method="set_money"]
 [connection signal="money_sold" from="CanvasLayer/inventory_ui" to="player" method="_on_inventory_ui_money_sold"]
 [connection signal="money_sold" from="CanvasLayer2/inventory_hotbar_ui" to="player" method="_on_inventory_ui_money_sold"]
