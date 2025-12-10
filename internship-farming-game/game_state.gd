@@ -16,10 +16,10 @@ func enter_playing():
 	current_game_state = Game_State.PLAYING
 
 func enter_talking():
-	current_game_state = Game_State.TALKING
+	pass 
 
 func enter_menu():
-	current_game_state = Game_State.MENU
+	pass 
 
 func check_playing():
 	if current_game_state == Game_State.PLAYING:
@@ -28,13 +28,7 @@ func check_playing():
 		return false 
 
 func check_talking():
-	if current_game_state == Game_State.TALKING:
-		return true 
-	else: 
-		return false 
+	pass 
 
 func check_menu():
-	if current_game_state == Game_State.MENU:
-		return true 
-	else: 
-		return false 
+	pass  
