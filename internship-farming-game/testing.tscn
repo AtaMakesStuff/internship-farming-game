@@ -121,12 +121,6 @@ text = "Start Time"
 [connection signal="send_active_queue" from="CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer" to="CanvasLayer2/inventory_hotbar_ui" method="_on_grid_container_send_active_queue"]
 [connection signal="npc_clicked" from="npc/Sprite2D" to="dialogue_box" method="_on_sprite_2d_npc_clicked"]
 [connection signal="dialogue_finished" from="dialogue_box/text_box" to="dialogue_box" method="_on_text_box_dialogue_finished"]
-[connection signal="pressed" from="time/testingTime" to="time" method="_on_testing_time_pressed"]
-[connection signal="pressed" from="time/testingTime2" to="time" method="_on_testing_time_2_pressed"]
-[connection signal="pressed" from="time/testingTime3" to="time" method="_on_testing_time_3_pressed"]
-[connection signal="pressed" from="time/testingTime4" to="time" method="_on_testing_time_4_pressed"]
-[connection signal="pressed" from="time/testingTime5" to="time" method="_on_testing_time_5_pressed"]
-[connection signal="pressed" from="time/testingTime6" to="time" method="_on_testing_time_6_pressed"]
 
 [editable path="CanvasLayer/inventory_ui"]
 [editable path="CanvasLayer2/inventory_hotbar_ui"]

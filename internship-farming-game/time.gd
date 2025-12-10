@@ -84,10 +84,9 @@ func end_day():
 	if current_day == max_day:
 		advance_season()
 	advance_day_otw()
-	advance_day()
 
 func start_tracking_minutes():
-	$Timer.start()
+	pass
 
 func _on_testing_time_pressed() -> void:
 	advance_day()
