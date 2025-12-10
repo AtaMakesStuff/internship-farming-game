@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://casinnr6aw1dg"]
+[gd_scene load_steps=15 format=3 uid="uid://casinnr6aw1dg"]
 
 [ext_resource type="PackedScene" uid="uid://c5b0bdgeuwwea" path="res://player.tscn" id="1_m16bd"]
 [ext_resource type="Script" path="res://main_scene_start.gd" id="1_r4d37"]
 [ext_resource type="PackedScene" uid="uid://dy3xf8kokulcv" path="res://farm_tile.tscn" id="2_5abx4"]
 [ext_resource type="PackedScene" uid="uid://cw1ce7papfu5u" path="res://inventory/inventory.tscn" id="3_as27f"]
-[ext_resource type="Resource" uid="uid://bs4eoe62eia4n" path="res://inventory/tile_inventory.tres" id="3_cow4w"]
-[ext_resource type="Resource" uid="uid://bq6qks8k46s2t" path="res://inventory/tile_inventory_2.tres" id="4_n7624"]
+[ext_resource type="Resource" uid="uid://b7jwxibxrtnoa" path="res://inventory/tile_inventory.tres" id="3_cow4w"]
+[ext_resource type="Resource" uid="uid://4bjsolcb5bis" path="res://inventory/tile_inventory_2.tres" id="4_n7624"]
 [ext_resource type="PackedScene" uid="uid://cdyy60hxi7k4a" path="res://inventory/inventory_hotbar_ui.tscn" id="7_n8qdd"]
 [ext_resource type="PackedScene" uid="uid://cwd443r74rul7" path="res://npc.tscn" id="8_ka1op"]
 [ext_resource type="PackedScene" uid="uid://c11g25xw2akm5" path="res://dialogue_box.tscn" id="9_0hxd5"]
@@ -13,10 +13,6 @@
 [ext_resource type="PackedScene" path="res://inventory/tools/hoe_2.tscn" id="11_eca7a"]
 [ext_resource type="PackedScene" uid="uid://cvy6cbncaqy3w" path="res://inventory/seeds/parsnip_seeds.tscn" id="12_ovkm3"]
 [ext_resource type="PackedScene" uid="uid://chl2aoiukl2h1" path="res://inventory/seeds/green_bean_seeds.tscn" id="13_uh4e5"]
-[ext_resource type="PackedScene" uid="uid://c28b8ndee5rtm" path="res://inventory/seeds/cabbage_seeds.tscn" id="14_rr00h"]
-[ext_resource type="PackedScene" uid="uid://cqf5ewita8y8f" path="res://inventory/seeds/carrot_seeds.tscn" id="16_b3t3f"]
-[ext_resource type="PackedScene" uid="uid://xks6uxg8bja2" path="res://inventory/seeds/potato_seeds.tscn" id="17_qvhf2"]
-[ext_resource type="PackedScene" uid="uid://bxtjre2s4msy7" path="res://inventory/seeds/strawberry_seeds.tscn" id="18_j5oxk"]
 [ext_resource type="PackedScene" path="res://inventory/tools/watering_can.tscn" id="20_rxim8"]
 
 [node name="testing" type="Node2D"]
@@ -140,35 +136,11 @@ position = Vector2(40, 176)
 [node name="ParsnipSeeds2" parent="." instance=ExtResource("12_ovkm3")]
 position = Vector2(152, 233)
 
-[node name="CabbageSeeds" parent="." instance=ExtResource("14_rr00h")]
-position = Vector2(32, 336)
-
-[node name="CabbageSeeds2" parent="." instance=ExtResource("14_rr00h")]
-position = Vector2(80, 376)
-
 [node name="GreenBeanSeeds" parent="." instance=ExtResource("13_uh4e5")]
 position = Vector2(144, 296)
 
 [node name="GreenBeanSeeds2" parent="." instance=ExtResource("13_uh4e5")]
 position = Vector2(80, 288)
-
-[node name="CarrotSeeds" parent="." instance=ExtResource("16_b3t3f")]
-position = Vector2(136, 368)
-
-[node name="CarrotSeeds2" parent="." instance=ExtResource("16_b3t3f")]
-position = Vector2(32, 392)
-
-[node name="PotatoSeeds" parent="." instance=ExtResource("17_qvhf2")]
-position = Vector2(96, 432)
-
-[node name="PotatoSeeds2" parent="." instance=ExtResource("17_qvhf2")]
-position = Vector2(40, 448)
-
-[node name="StrawberrySeeds" parent="." instance=ExtResource("18_j5oxk")]
-position = Vector2(80, 480)
-
-[node name="StrawberrySeeds2" parent="." instance=ExtResource("18_j5oxk")]
-position = Vector2(128, 480)
 
 [connection signal="to_remove_slot_number" from="CanvasLayer2/inventory_hotbar_ui" to="player" method="_on_inventory_ui_to_remove_slot_number"]
 [connection signal="send_active_queue" from="CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer" to="CanvasLayer2/inventory_hotbar_ui" method="_on_grid_container_send_active_queue"]

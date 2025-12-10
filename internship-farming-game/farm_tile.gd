@@ -12,8 +12,7 @@ var current_farm_tile_state = Farm_Tile_State.UNTILLED
 var player = SceneMultiplayer
 var is_player_inside = false
 
-# Rip out recognition of player being near farm tile
-"""
+
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = true
@@ -22,7 +21,6 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.name == "player":
 		is_player_inside = false
-"""
 
 func _input(event):
 	
@@ -58,8 +56,6 @@ func _input(event):
 					tile_inventory.insert($"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item)
 					print("made it!")
 					enter_tilled_seeded()
-					Input.action_press("drop_item")
-					Input.action_release("drop_item")
 				elif current_farm_tile_state == Farm_Tile_State.TILLED_WATERED:
 					tile_inventory.insert($"../CanvasLayer2/inventory_hotbar_ui".inventory.slots[$"../CanvasLayer2/inventory_hotbar_ui/NinePatchRect/GridContainer".active_queue].item)
 					enter_tilled_seeded_watered()
